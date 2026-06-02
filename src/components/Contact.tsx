@@ -37,9 +37,8 @@ export default function Contact({ theme }: ContactProps) {
     ? 'bg-white/70 border-teal-100 text-teal-950 focus:border-teal-500'
     : 'bg-slate-950/60 border-indigo-950/40 text-slate-100 focus:border-indigo-500';
 
-  const numberStr = '+919058831564';
-  const numberStr2 = '+917742484898';
-  const whatsappUrl = `https://wa.me/919058831564?text=${encodeURIComponent('Hello JOURNEYO! I am seeking immediate VVIP support for planning my next custom journey.')}`;
+  const numberStr = '+917742484898';
+  const whatsappUrl = `https://wa.me/917742484898?text=${encodeURIComponent('Hello JOURNEYO! I am seeking immediate VVIP support for planning my next custom journey.')}`;
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-20 relative w-full text-left">
@@ -86,7 +85,7 @@ export default function Contact({ theme }: ContactProps) {
                 Initiate Chat on WhatsApp
               </a>
 
-              {/* Call Expert direct connection - Line 1 */}
+              {/* Call Expert direct connection */}
               <a
                 href={`tel:${numberStr}`}
                 className={`w-full py-3 px-5 rounded-xl border font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 ${
@@ -96,20 +95,7 @@ export default function Contact({ theme }: ContactProps) {
                 }`}
               >
                 <Phone className="w-3.5 h-3.5" />
-                Call specialist: +91 90588 31564
-              </a>
-
-              {/* Call Expert direct connection - Line 2 */}
-              <a
-                href={`tel:${numberStr2}`}
-                className={`w-full py-3 px-5 rounded-xl border font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 ${
-                  theme === 'day'
-                    ? 'border-teal-900/10 text-teal-950 hover:bg-white/50'
-                    : 'border-white/10 text-white hover:bg-white/5'
-                }`}
-              >
-                <Phone className="w-3.5 h-3.5" />
-                Call specialist:  +91 77424 84898
+                Call specialist: +91 77424 84898
               </a>
             </div>
           </div>

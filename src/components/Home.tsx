@@ -123,20 +123,6 @@ export default function Home({ setCurrentTab, theme, onOpenBooking }: HomeProps)
               </div>
             </div>
           </motion.div>
-
-          {/* Abstract floating absolute visual decor */}
-          <div className="absolute -bottom-6 -left-6 bg-white/40 dark:bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/25 dark:border-white/10 shadow-lg text-left max-w-[180px] max-md:hidden select-none">
-            <div className="flex items-center gap-1.5 text-amber-500 mb-1">
-              <Star className="w-4 h-4 fill-amber-500" />
-              <span className="text-xs font-bold text-slate-800 dark:text-slate-100">Startup Era</span>
-            </div>
-            <p 
-              className={`text-[10px] font-medium ${theme === 'day' ? '' : 'text-slate-600 dark:text-slate-400'}`}
-              style={theme === 'day' ? { color: '#6e739f' } : undefined}
-            >
-              Redefining boutique travels in India and beyond.
-            </p>
-          </div>
         </div>
       </div>
 
@@ -147,8 +133,13 @@ export default function Home({ setCurrentTab, theme, onOpenBooking }: HomeProps)
       >
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <Award className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-            <span className="text-2xl sm:text-3xl font-black tracking-tight text-teal-900 dark:text-white">New</span>
+            <Award className="w-5 h-5 text-teal-600 dark:text-teal-400 animate-pulse" />
+            <span 
+              className={`text-2xl sm:text-3xl font-black tracking-tight ${theme === 'day' ? '' : 'text-white'}`}
+              style={theme === 'day' ? { color: '#6e739f' } : undefined}
+            >
+              New
+            </span>
           </div>
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             Age Startup
@@ -164,7 +155,12 @@ export default function Home({ setCurrentTab, theme, onOpenBooking }: HomeProps)
         <div>
           <div className="flex items-center gap-2 mb-2">
             <Star className="w-5 h-5 text-teal-600 dark:text-teal-400 fill-teal-600 dark:fill-teal-400" />
-            <span className="text-2xl sm:text-3xl font-black tracking-tight text-teal-900 dark:text-white">100%</span>
+            <span 
+              className={`text-2xl sm:text-3xl font-black tracking-tight ${theme === 'day' ? '' : 'text-white'}`}
+              style={theme === 'day' ? { color: '#6e739f' } : undefined}
+            >
+              100%
+            </span>
           </div>
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             Custom Itineraries
@@ -180,7 +176,12 @@ export default function Home({ setCurrentTab, theme, onOpenBooking }: HomeProps)
         <div>
           <div className="flex items-center gap-2 mb-2">
             <ShieldCheck className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-            <span className="text-2xl sm:text-3xl font-black tracking-tight text-teal-900 dark:text-white">100%</span>
+            <span 
+              className={`text-2xl sm:text-3xl font-black tracking-tight ${theme === 'day' ? '' : 'text-white'}`}
+              style={theme === 'day' ? { color: '#6e739f' } : undefined}
+            >
+              100%
+            </span>
           </div>
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             Direct Support Index
@@ -196,7 +197,12 @@ export default function Home({ setCurrentTab, theme, onOpenBooking }: HomeProps)
         <div>
           <div className="flex items-center gap-2 mb-2">
             <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-            <span className="text-2xl sm:text-3xl font-black tracking-tight text-teal-900 dark:text-white">Bespoke</span>
+            <span 
+              className={`text-2xl sm:text-3xl font-black tracking-tight ${theme === 'day' ? '' : 'text-white'}`}
+              style={theme === 'day' ? { color: '#6e739f' } : undefined}
+            >
+              Bespoke
+            </span>
           </div>
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             Local Discoveries

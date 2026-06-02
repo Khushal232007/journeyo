@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X, Sun, Moon, Compass } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+// @ts-ignore
+import logoImg from '../assets/images/journeyo_brand_logo_1780414877692.png';
 
 interface NavbarProps {
   currentTab: string;
@@ -41,16 +43,17 @@ export default function Navbar({ currentTab, setCurrentTab, theme, setTheme }: N
         {/* Brand Logo */}
         <button 
           onClick={() => { setCurrentTab('home'); setIsOpen(false); }}
-          className="flex items-center gap-2 cursor-pointer group text-left"
+          className="flex items-center cursor-pointer group text-left"
         >
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-teal-500 to-amber-400 dark:from-teal-400 dark:to-indigo-500 p-[1px] flex items-center justify-center shadow-md">
-            <div className="w-full h-full rounded-full bg-slate-900/10 dark:bg-slate-950/20 backdrop-blur-sm flex items-center justify-center">
-              <Compass className="w-5 h-5 text-teal-800 dark:text-teal-200 group-hover:rotate-45 transition-transform duration-500" />
-            </div>
+          {/* Custom generated logo image replacing the old SVG circle & branding text */}
+          <div className="h-10 sm:h-11 px-3 py-1 rounded-xl bg-white dark:bg-white flex items-center justify-center overflow-hidden shadow-md border border-white/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300">
+            <img 
+              src={logoImg} 
+              alt="JOURNEYO Logo" 
+              className="h-full object-contain pointer-events-none select-none max-w-[120px] sm:max-w-[150px]"
+              referrerPolicy="no-referrer"
+            />
           </div>
-          <span className={`text-xl font-bold uppercase transition-colors duration-300 ${navBrandClass}`}>
-            JOURNEYO
-          </span>
         </button>
 
         {/* Desktop Links */}

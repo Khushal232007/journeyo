@@ -38,7 +38,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
       `Please connect with me on WhatsApp to finalize my itinerary. Thank you, JOURNEYO.`;
 
     const encoded = encodeURIComponent(message);
-    setWhatsappUrl(`https://wa.me/919058831564?text=${encoded}`);
+    setWhatsappUrl(`https://wa.me/917742484898?text=${encoded}`);
   }, [formData, packageName]);
 
   if (!isOpen) return null;

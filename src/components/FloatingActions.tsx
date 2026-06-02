@@ -7,8 +7,8 @@ interface FloatingActionsProps {
 }
 
 export default function FloatingActions({ theme }: FloatingActionsProps) {
-  const number = '+919058831564';
-  const whatsappUrl = `https://wa.me/919058831564?text=${encodeURIComponent('Hello JOURNEYO! I am looking to plan a premium luxury vacation. Please connect me with a luxury travel architect.')}`;
+  const number = '+917742484898';
+  const whatsappUrl = `https://wa.me/917742484898?text=${encodeURIComponent('Hello JOURNEYO! I am looking to plan a premium luxury vacation. Please connect me with a luxury travel architect.')}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3.5 pointer-events-auto">

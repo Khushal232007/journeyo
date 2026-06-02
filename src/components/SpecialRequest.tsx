@@ -36,7 +36,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
       `Please assign a senior travel architect to map my coordinates. Thank you, JOURNEYO.`;
 
     const encoded = encodeURIComponent(message);
-    setWhatsappUrl(`https://wa.me/919058831564?text=${encoded}`);
+    setWhatsappUrl(`https://wa.me/917742484898?text=${encoded}`);
   }, [formData]);
 
   // Theme values
