@@ -27,15 +27,15 @@ export default function Contact({ theme }: ContactProps) {
   };
 
   // Theme values
-  const textTitleColor = theme === 'day' ? 'text-teal-950' : 'text-white';
-  const textSubColor = theme === 'day' ? 'text-teal-900/70' : 'text-slate-300';
+  const textTitleColor = theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]';
+  const textSubColor = theme === 'day' ? 'text-[#3B2E25]/85' : 'text-[#F5E6D3]/80';
   const cardBgClasses = theme === 'day'
-    ? 'bg-white/40 border-teal-100/50 hover:shadow-lg'
-    : 'bg-slate-950/45 border-indigo-950/40 hover:shadow-lg';
+    ? 'bg-[#FFFDFC]/90 border-[#8B6B52]/25 hover:shadow-lg text-[#3B2E25]'
+    : 'bg-[#2A2522]/80 border-[#8B6B52]/30 hover:shadow-lg text-[#F5E6D3]';
 
   const inputStyle = theme === 'day'
-    ? 'bg-white/70 border-teal-100 text-teal-950 focus:border-teal-500'
-    : 'bg-slate-950/60 border-indigo-950/40 text-slate-100 focus:border-indigo-500';
+    ? 'bg-[#FAF7F2] border-[#8B6B52]/30 text-[#3B2E25] focus:border-[#8B6B52]'
+    : 'bg-[#121212]/60 border-[#8B6B52]/30 text-[#F5E6D3] focus:border-[#D4B48C]';
 
   const numberStr = '+917742484898';
   const whatsappUrl = `https://wa.me/917742484898?text=${encodeURIComponent('Hello JOURNEYO! I am seeking immediate VVIP support for planning my next custom journey.')}`;
@@ -45,7 +45,9 @@ export default function Contact({ theme }: ContactProps) {
       
       {/* Header section */}
       <div className="max-w-2xl mb-12 sm:mb-16">
-        <span className="text-xs font-bold tracking-widest uppercase text-teal-600 dark:text-cyan-400 mb-2 block">
+        <span className={`text-xs font-bold tracking-widest uppercase mb-2 block font-mono ${
+          theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'
+        }`}>
           Reach Our Curators
         </span>
         <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 ${textTitleColor}`}>
@@ -66,10 +68,7 @@ export default function Contact({ theme }: ContactProps) {
             <h3 className={`text-base sm:text-lg font-bold tracking-tight mb-4 ${textTitleColor}`}>
               Instant Communication Gateways
             </h3>
-            <p 
-              className={`text-xs leading-relaxed mb-6 ${theme === 'day' ? '' : 'text-slate-600 dark:text-slate-400'}`}
-              style={theme === 'day' ? { color: '#6e739f' } : undefined}
-            >
+            <p className={`text-xs leading-relaxed mb-6 ${theme === 'day' ? 'text-[#3B2E25]/80' : 'text-[#F5E6D3]/70'}`}>
               Launch high-priority redirects to consult on available hotel suites, private charters, and security backstops instantly.
             </p>
 
@@ -90,8 +89,8 @@ export default function Contact({ theme }: ContactProps) {
                 href={`tel:${numberStr}`}
                 className={`w-full py-3 px-5 rounded-xl border font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 ${
                   theme === 'day'
-                    ? 'border-teal-900/10 text-teal-950 hover:bg-white/50'
-                    : 'border-white/10 text-white hover:bg-white/5'
+                    ? 'border-[#8B6B52]/40 text-[#8B6B52] hover:bg-[#8B6B52]/10'
+                    : 'border-[#8B6B52]/30 text-[#F5E6D3] hover:bg-[#8B6B52]/15'
                 }`}
               >
                 <Phone className="w-3.5 h-3.5" />
@@ -103,22 +102,16 @@ export default function Contact({ theme }: ContactProps) {
           {/* Core Business info list */}
           <div className={`p-6 sm:p-8 rounded-2xl border backdrop-blur-sm shadow-md text-left space-y-5 ${cardBgClasses}`}>
             <h3 className={`text-base sm:text-lg font-bold tracking-tight mb-2 ${textTitleColor}`}>
-              Secluded Ateliers
+              General Inquiries
             </h3>
 
             <div className="flex items-start gap-3.5 text-xs">
-              <Mail className="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />
+              <Mail className={`w-5 h-5 shrink-0 mt-0.5 ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
               <div>
-                <span 
-                  className={`font-bold block mb-1 ${theme === 'day' ? '' : 'text-slate-900'}`}
-                  style={theme === 'day' ? { color: '#6e739f' } : undefined}
-                >
+                <span className={`font-bold block mb-1 ${theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'}`}>
                   Direct Support & Email
                 </span>
-                <p 
-                  className={`opacity-75 leading-normal font-mono ${theme === 'day' ? '' : 'text-slate-800 dark:text-slate-300'}`}
-                  style={theme === 'day' ? { color: '#6e739f' } : undefined}
-                >
+                <p className={`opacity-75 leading-normal font-mono ${theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]/80'}`}>
                   journeyo2701@gmail.com
                 </p>
               </div>
@@ -132,12 +125,6 @@ export default function Contact({ theme }: ContactProps) {
                 <a href="#instagram" className="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:scale-105 hover:bg-teal-500/15 text-slate-600 dark:text-slate-300 transition-all cursor-pointer">
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a href="#twitter" className="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:scale-105 hover:bg-teal-500/15 text-slate-600 dark:text-slate-300 transition-all cursor-pointer">
-                  <Twitter className="w-4 h-4" />
-                </a>
-                <a href="#youtube" className="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:scale-105 hover:bg-teal-500/15 text-slate-600 dark:text-slate-300 transition-all cursor-pointer">
-                  <Youtube className="w-4 h-4" />
-                </a>
               </div>
             </div>
           </div>
@@ -148,7 +135,7 @@ export default function Contact({ theme }: ContactProps) {
         <div className="lg:col-span-7">
           <div className={`p-6 sm:p-10 rounded-2xl border backdrop-blur-sm shadow-xl relative ${cardBgClasses}`}>
             <h3 className={`text-lg sm:text-xl font-bold tracking-tight mb-8 flex items-center gap-2 ${textTitleColor}`}>
-              <Compass className="w-5 h-5 text-teal-500 animate-spin-slow" />
+              <Compass className={`w-5 h-5 animate-spin-slow ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
               Submit Dispatch Memoir
             </h3>
 
@@ -159,9 +146,13 @@ export default function Contact({ theme }: ContactProps) {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="p-4 bg-teal-500/10 border border-teal-500/20 text-teal-800 dark:text-teal-200 text-xs rounded-xl mb-6 flex items-center gap-2 font-medium"
+                  className={`p-4 border text-xs rounded-xl mb-6 flex items-center gap-2 font-medium ${
+                    theme === 'day'
+                      ? 'bg-[#FFFDFC] border-[#8B6B52]/20 text-[#8B6B52]'
+                      : 'bg-[#6B4F3A]/10 border-[#8B6B52]/20 text-[#D4B48C]'
+                  }`}
                 >
-                  <Send className="w-4 h-4 text-teal-500 shrink-0" />
+                  <Send className={`w-4 h-4 shrink-0 ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
                   Your message has been beamed directly to our concierge team. You will receive an encrypted follow-up email.
                 </motion.div>
               )}
@@ -172,10 +163,9 @@ export default function Contact({ theme }: ContactProps) {
               {/* Name & Email (Split) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label 
-                    className="block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80"
-                    style={theme === 'day' ? { color: '#6e739f' } : undefined}
-                  >
+                  <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
+                    theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                  }`}>
                     Your Name
                   </label>
                   <input
@@ -189,10 +179,9 @@ export default function Contact({ theme }: ContactProps) {
                 </div>
 
                 <div>
-                  <label 
-                    className="block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80"
-                    style={theme === 'day' ? { color: '#6e739f' } : undefined}
-                  >
+                  <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
+                    theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                  }`}>
                     Email Address
                   </label>
                   <input
@@ -208,10 +197,9 @@ export default function Contact({ theme }: ContactProps) {
 
               {/* Subject */}
               <div>
-                <label 
-                  className="block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80"
-                  style={theme === 'day' ? { color: '#6e739f' } : undefined}
-                >
+                <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
+                  theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                }`}>
                   Subject / Reason
                 </label>
                 <input
@@ -226,10 +214,9 @@ export default function Contact({ theme }: ContactProps) {
 
               {/* Message */}
               <div>
-                <label 
-                  className="block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80"
-                  style={theme === 'day' ? { color: '#6e739f' } : undefined}
-                >
+                <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
+                  theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                }`}>
                   Your message
                 </label>
                 <textarea
@@ -246,7 +233,7 @@ export default function Contact({ theme }: ContactProps) {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-teal-600 via-teal-500 to-indigo-600 hover:brightness-105 active:scale-[0.99] text-white font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all"
+                  className="w-full py-4 bg-[#8B6B52] hover:bg-[#72553E] active:scale-[0.99] text-white font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all"
                 >
                   <Send className="w-4 h-4" />
                   Dispatch Inquiry to Concierge Office

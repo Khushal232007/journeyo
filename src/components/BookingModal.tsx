@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Calendar, User, Phone, Wallet, Users, Compass } from 'lucide-react';
-import { motion } from 'motion/react';
+import { X, Calendar, User, Phone, Users, Compass } from 'lucide-react';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -43,41 +42,33 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
 
   if (!isOpen) return null;
 
-  const bgClasses = theme === 'day'
-    ? 'bg-gradient-to-br from-[#ebf8fa] to-[#f7f2eb] text-teal-950 border border-teal-100'
-    : 'bg-gradient-to-br from-[#0c1226] to-[#040817] text-white border border-indigo-900/40';
+  const isDay = theme === 'day';
+  const bgClasses = isDay 
+    ? 'bg-gradient-to-br from-[#FFFDFC] to-[#FAF7F2] text-[#3B2E25] border border-[#8B6B52]/20'
+    : 'bg-gradient-to-br from-[#2A2522] to-[#121212] text-[#F5E6D3] border border-[#8B6B52]/35';
 
-  const inputStyle = theme === 'day'
-    ? 'bg-white/60 border-teal-100 text-teal-950 focus:border-teal-500 focus:bg-white'
-    : 'bg-slate-900/60 border-indigo-950 text-slate-100 focus:border-indigo-500 focus:bg-slate-950';
+  const inputStyle = isDay
+    ? 'bg-[#FFFDFC] border-[#8B6B52]/30 text-[#3B2E25] focus:border-[#8B6B52] focus:bg-[#FFFDFC]'
+    : 'bg-[#121212]/70 border-[#8B6B52]/30 text-[#F5E6D3] focus:border-[#D4B48C] focus:bg-[#121212]';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Dark overlay backdrop */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+      {/* Dark overlay backdrop (Static, no transitions) */}
+      <div
         onClick={onClose}
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
       />
 
       {/* Main Modal body */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 15 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 15 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-        className={`relative w-full max-w-lg rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden z-10 ${bgClasses}`}
-      >
+      <div className={`relative w-full max-w-lg rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden z-10 transition-all duration-300 ${bgClasses}`}>
         {/* Subtle decorative vector circles inside modal */}
-        <div className="absolute top-[-20%] right-[-10%] w-[300px] h-[300px] rounded-full bg-teal-300/[3%] blur-[50px]" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-indigo-500/[3%] blur-[50px]" />
+        <div className="absolute top-[-20%] right-[-10%] w-[300px] h-[300px] rounded-full bg-[#8B6B52]/[3%] blur-[50px]" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-[#D4B48C]/[3%] blur-[50px]" />
 
         {/* Header */}
         <div className="flex items-center justify-between mb-6 relative">
           <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-teal-600 dark:text-indigo-400 mb-1 block">
+            <span className={`text-xs font-semibold tracking-widest uppercase mb-1 block font-mono ${isDay ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`}>
               Luxury Inquiry
             </span>
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
@@ -85,14 +76,14 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
             </h3>
             {packageName && (
               <p className="text-sm opacity-70 mt-1 flex items-center gap-1.5 font-medium">
-                <Compass className="w-3.5 h-3.5 text-teal-500" />
+                <Compass className={`w-3.5 h-3.5 ${isDay ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
                 {packageName}
               </p>
             )}
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-pointer"
+            className={`p-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer ${isDay ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'}`}
           >
             <X className="w-5 h-5" />
           </button>
@@ -149,11 +140,11 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
                   onChange={(e) => setFormData({ ...formData, travelers: e.target.value })}
                   className={`w-full pl-10 pr-4 py-2.5 rounded-xl border text-sm outline-none transition-all duration-300 cursor-pointer appearance-none ${inputStyle}`}
                 >
-                  <option value="1">1 Explorer</option>
-                  <option value="2">2 Explorers</option>
-                  <option value="4">4 Explorers</option>
-                  <option value="6">6+ Explorers</option>
-                  <option value="12">VVIP Charter Party (10+)</option>
+                  <option value="1" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>1 Explorer</option>
+                  <option value="2" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>2 Explorers</option>
+                  <option value="4" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>4 Explorers</option>
+                  <option value="6" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>6+ Explorers</option>
+                  <option value="12" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>VVIP Charter Party (10+)</option>
                 </select>
               </div>
             </div>
@@ -197,23 +188,22 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
             Submitting this enquiry opens your instant high-priority gateway in WhatsApp. Our travel coordinators respond within 15 minutes to configure hotel suites and charter flights.
           </p>
 
-          {/* Submit Anchor (styled like ultra premium button) */}
+          {/* Submit Anchor (colored beautifully in mocha) */}
           <div className="pt-2">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                // We briefly delay onClose so user has clicked and redirection started
-                setTimeout(() => onClose(), 1000);
+                setTimeout(() => onClose(), 1050);
               }}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-teal-600 via-teal-500 to-indigo-600 dark:from-teal-500 dark:via-indigo-500 dark:to-teal-400 hover:brightness-105 active:scale-[0.99] text-white text-center font-bold text-sm uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all duration-300"
+              className="w-full py-3.5 rounded-xl bg-[#8B6B52] hover:bg-[#72553E] text-[#F5E6D3] text-center font-bold text-sm uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all duration-300"
             >
               Secure Bespoke Space via WhatsApp
             </a>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

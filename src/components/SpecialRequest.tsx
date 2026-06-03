@@ -40,22 +40,22 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
   }, [formData]);
 
   // Theme values
-  const textTitleColor = theme === 'day' ? 'text-teal-950' : 'text-white';
-  const textSubColor = theme === 'day' ? 'text-teal-900/70' : 'text-slate-300';
+  const textTitleColor = theme === 'day' ? 'text-[#6B4F3A]' : 'text-[#F5E6D3]';
+  const textSubColor = theme === 'day' ? 'text-[#6B4F3A]/85' : 'text-[#F5E6D3]/80';
   const cardBgClasses = theme === 'day'
-    ? 'bg-white/40 border-teal-100/50 hover:shadow-xl'
-    : 'bg-slate-950/45 border-indigo-950/40 hover:shadow-xl';
+    ? 'bg-[#F5E6D3]/35 border-[#6B4F3A]/15 hover:shadow-xl'
+    : 'bg-[#2A2522]/80 border-[#8B6B52]/30 hover:shadow-xl';
 
   const inputStyle = theme === 'day'
-    ? 'bg-white/70 border-teal-100 text-teal-950 focus:border-teal-500'
-    : 'bg-slate-950/60 border-indigo-950/40 text-slate-100 focus:border-indigo-500';
+    ? 'bg-[#F5E6D3]/40 border-[#6B4F3A]/20 text-[#6B4F3A] focus:border-[#6B4F3A]'
+    : 'bg-[#121212]/60 border-[#8B6B52]/30 text-[#F5E6D3] focus:border-[#D4B48C]';
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-20 relative w-full text-left">
       
       {/* Header section */}
       <div className="max-w-2xl mb-12 sm:mb-16">
-        <span className="text-xs font-bold tracking-widest uppercase text-teal-600 dark:text-cyan-400 mb-2 block">
+        <span className="text-xs font-bold tracking-widest uppercase text-[#6B4F3A] dark:text-[#D4B48C] mb-2 block font-mono">
           Customise Trip
         </span>
         <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 ${textTitleColor}`}>
@@ -72,7 +72,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
         <div className="lg:col-span-7 space-y-6">
           <div className={`p-6 sm:p-10 rounded-2xl border backdrop-blur-sm shadow-xl ${cardBgClasses}`}>
             <h3 className={`text-lg sm:text-xl font-bold tracking-tight mb-8 flex items-center gap-2 ${textTitleColor}`}>
-              <Sparkles className="w-5 h-5 text-teal-500 animate-spin-slow" />
+              <Sparkles className="w-5 h-5 text-[#6B4F3A] dark:text-[#D4B48C] animate-spin-slow" />
               Custom Expeditions Specs
             </h3>
 
@@ -83,7 +83,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
                 <div>
                   <label 
                     className="block text-[10px] font-bold uppercase tracking-wider mb-2 opacity-80"
-                    style={theme === 'day' ? { color: '#6e739f' } : undefined}
+                    style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
                   >
                     Desired Destination / Area
                   </label>
@@ -102,7 +102,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
                 <div>
                   <label 
                     className="block text-[10px] font-bold uppercase tracking-wider mb-2 opacity-80"
-                    style={theme === 'day' ? { color: '#6e739f' } : undefined}
+                    style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
                   >
                     Target Timeframe / Calendar
                   </label>
@@ -124,7 +124,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
                 <div>
                   <label 
                     className="block text-[10px] font-bold uppercase tracking-wider mb-2 opacity-80"
-                    style={theme === 'day' ? { color: '#6e739f' } : undefined}
+                    style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
                   >
                     Guest Count
                   </label>
@@ -147,7 +147,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
                 <div>
                   <label 
                     className="block text-[10px] font-bold uppercase tracking-wider mb-2 opacity-80"
-                    style={theme === 'day' ? { color: '#6e739f' } : undefined}
+                    style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
                   >
                     Luxury Budget Limit (INR)
                   </label>
@@ -168,7 +168,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
               <div>
                 <label 
                   className="block text-[10px] font-bold uppercase tracking-wider mb-2 opacity-80"
-                  style={theme === 'day' ? { color: '#6e739f' } : undefined}
+                  style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
                 >
                   Target Travel Archetype
                 </label>
@@ -186,12 +186,12 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
                         onClick={() => setFormData({ ...formData, preferences: arch })}
                         className={`p-3.5 rounded-xl border text-left text-xs font-semibold transition-all duration-300 cursor-pointer ${
                           isSelected
-                            ? 'border-teal-500 bg-teal-500/10 text-teal-800 dark:text-teal-200'
+                            ? 'border-[#6B4F3A] bg-[#6B4F3A]/10 text-[#6B4F3A] dark:border-[#D4B48C] dark:bg-[#D4B48C]/15 dark:text-[#D4B48C]'
                             : theme === 'day'
-                            ? 'border-teal-100 hover:bg-white/50'
-                            : 'border-indigo-950/30 text-slate-400 hover:bg-black/30'
+                            ? 'border-[#6B4F3A]/20 hover:bg-[#F5E6D3]/40'
+                            : 'border-[#8B6B52]/30 text-[#F5E6D3]/70 hover:bg-[#2A2522]'
                         }`}
-                        style={theme === 'day' && !isSelected ? { color: '#6e739f' } : undefined}
+                        style={theme === 'day' && !isSelected ? { color: '#6B4F3A' } : undefined}
                       >
                         {arch}
                       </button>
@@ -204,7 +204,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
               <div>
                 <label 
                   className="block text-[10px] font-bold uppercase tracking-wider mb-2 opacity-80"
-                  style={theme === 'day' ? { color: '#6e739f' } : undefined}
+                  style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
                 >
                   Sensory Preferences / Bespoke Requests
                 </label>
@@ -223,7 +223,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-4 bg-gradient-to-r from-teal-600 via-teal-500 to-indigo-600 hover:brightness-105 rounded-xl active:scale-[0.99] text-white text-center font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all"
+                  className="w-full py-4 bg-[#6B4F3A] hover:bg-[#5A402E] rounded-xl active:scale-[0.99] text-white text-center font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all"
                 >
                   <MessageSquare className="w-4.5 h-4.5 animate-pulse" />
                   Submit Customise Trip Specifications to WhatsApp
@@ -236,40 +236,40 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
 
         {/* RIGHT COLUMN: Ticket-themed preview of their custom expedition */}
         <div className="lg:col-span-5 flex flex-col justify-center">
-          <div className="relative rounded-2xl border border-white/20 bg-slate-950 text-white overflow-hidden shadow-2xl p-6 sm:p-8 select-none">
+          <div className="relative rounded-2xl border border-[#8B6B52]/30 bg-[#2A2522] text-[#F5E6D3] overflow-hidden shadow-2xl p-6 sm:p-8 select-none">
             {/* Holographic background glow */}
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-gradient-to-br from-teal-500/15 to-indigo-500/15 rounded-full blur-[45px]" />
-            <div className="absolute bottom-[-10%] left-[-15%] w-[180px] h-[180px] bg-teal-500/10 rounded-full blur-[40px]" />
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-gradient-to-br from-[#D4B48C]/10 to-[#8B6B52]/10 rounded-full blur-[45px]" />
+            <div className="absolute bottom-[-10%] left-[-15%] w-[180px] h-[180px] bg-[#D4B48C]/5 rounded-full blur-[40px]" />
 
             {/* Ticket header strip */}
-            <div className="flex justify-between items-center border-b border-white/10 pb-5 mb-5 uppercase text-left relative">
+            <div className="flex justify-between items-center border-b border-[#8B6B52]/20 pb-5 mb-5 uppercase text-left relative">
               <div>
-                <span className="text-[9px] font-bold text-teal-400 tracking-wider">CHARTER CODE</span>
-                <p className="text-xs font-semibold font-mono text-slate-300">JO-B_2026_CUSTOM</p>
+                <span className="text-[9px] font-bold text-[#D4B48C] tracking-wider">CHARTER CODE</span>
+                <p className="text-xs font-semibold font-mono text-[#F5E6D3]/85">JO-B_2026_CUSTOM</p>
               </div>
               <div className="text-right">
-                <span className="text-[9px] font-bold text-teal-400 tracking-wider">BOARDING LEDGER</span>
-                <p className="text-xs font-semibold font-mono text-slate-300">VVIP ACCESS</p>
+                <span className="text-[9px] font-bold text-[#D4B48C] tracking-wider">BOARDING LEDGER</span>
+                <p className="text-xs font-semibold font-mono text-[#F5E6D3]/85">VVIP ACCESS</p>
               </div>
             </div>
 
             {/* Ticket Body details */}
             <div className="text-left space-y-4 mb-6 relative">
               <div>
-                <span className="text-[9px] text-slate-400 block tracking-wider uppercase">Destination Domain</span>
-                <span className="text-sm font-bold text-teal-300 font-sans tracking-tight">
+                <span className="text-[9px] text-[#F5E6D3]/60 block tracking-wider uppercase">Destination Domain</span>
+                <span className="text-sm font-bold text-[#D4B48C] font-sans tracking-tight">
                   {formData.destination || 'To Be Mapped (Chordial)'}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <span className="text-[9px] text-slate-400 block tracking-wider uppercase">Guest Load</span>
-                  <span className="text-xs font-semibold text-slate-100">{formData.travelers} Traveler(s)</span>
+                  <span className="text-[9px] text-[#F5E6D3]/60 block tracking-wider uppercase">Guest Load</span>
+                  <span className="text-xs font-semibold text-[#F5E6D3]">{formData.travelers} Traveler(s)</span>
                 </div>
                 <div>
-                  <span className="text-[9px] text-slate-400 block tracking-wider uppercase">Target Budget (INR)</span>
-                  <span className="text-xs font-semibold text-teal-300">
+                  <span className="text-[9px] text-[#F5E6D3]/60 block tracking-wider uppercase">Target Budget (INR)</span>
+                  <span className="text-xs font-semibold text-[#D4B48C]">
                     {formData.budget ? `₹${Number(formData.budget).toLocaleString('en-IN')}` : 'Flexible'}
                   </span>
                 </div>
@@ -277,37 +277,37 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <span className="text-[9px] text-slate-400 block tracking-wider uppercase">Travel Schedule</span>
-                  <span className="text-xs font-semibold text-slate-100">{formData.dates || 'Flexible Calendar'}</span>
+                  <span className="text-[9px] text-[#F5E6D3]/60 block tracking-wider uppercase">Travel Schedule</span>
+                  <span className="text-xs font-semibold text-[#F5E6D3]">{formData.dates || 'Flexible Calendar'}</span>
                 </div>
                 <div>
-                  <span className="text-[9px] text-slate-400 block tracking-wider uppercase">Vanguard Archetype</span>
-                  <span className="text-xs font-semibold text-teal-300 font-mono tracking-tighter uppercase">{formData.preferences}</span>
+                  <span className="text-[9px] text-[#F5E6D3]/60 block tracking-wider uppercase">Vanguard Archetype</span>
+                  <span className="text-xs font-semibold text-[#D4B48C] font-mono tracking-tighter uppercase">{formData.preferences}</span>
                 </div>
               </div>
 
               <div>
-                <span className="text-[9px] text-slate-400 block tracking-wider uppercase">Custom Directives requested</span>
-                <p className="text-[11px] leading-relaxed text-slate-300 italic">
+                <span className="text-[9px] text-[#F5E6D3]/60 block tracking-wider uppercase">Custom Directives requested</span>
+                <p className="text-[11px] leading-relaxed text-[#F5E6D3]/80 italic">
                   "{formData.notes || 'None declared. Sitar performance, organic dining default.'}"
                 </p>
               </div>
             </div>
 
             {/* Cut-off receipt line design */}
-            <div className="relative border-t-2 border-dashed border-white/10 pt-5 text-left flex items-center justify-between">
+            <div className="relative border-t-2 border-dashed border-[#8B6B52]/20 pt-5 text-left flex items-center justify-between">
               {/* Absolutes circular notches on the left/right margins to denote travel ticket clipping */}
-              <div className="absolute left-[-32px] sm:left-[-40px] top-[-10px] w-5 h-5 bg-gradient-to-r from-[#ebf8fa] to-[#f7f2eb] dark:from-[#030712] dark:to-[#040817] rounded-full z-10" />
-              <div className="absolute right-[-32px] sm:right-[-40px] top-[-10px] w-5 h-5 bg-gradient-to-l from-[#ebf8fa] to-[#f7f2eb] dark:from-[#030712] dark:to-[#040817] rounded-full z-10" />
+              <div className="absolute left-[-32px] sm:left-[-40px] top-[-10px] w-5 h-5 bg-gradient-to-r from-[#faf3e8] to-[#F5E6D3] dark:from-[#121212] dark:to-[#121212] rounded-full z-10" />
+              <div className="absolute right-[-32px] sm:right-[-40px] top-[-10px] w-5 h-5 bg-gradient-to-l from-[#faf3e8] to-[#F5E6D3] dark:from-[#121212] dark:to-[#121212] rounded-full z-10" />
 
               <div>
-                <p className="text-[9px] font-mono text-slate-400">PASSPORT NO: REQ_2026_M</p>
-                <p className="text-[10px] font-bold text-teal-400">AUTHORIZED JOURNEYO CORE</p>
+                <p className="text-[9px] font-mono text-[#F5E6D3]/60">PASSPORT NO: REQ_2026_M</p>
+                <p className="text-[10px] font-bold text-[#D4B48C]">AUTHORIZED JOURNEYO CORE</p>
               </div>
               
               <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-                <span className="text-[9px] font-semibold text-slate-300">SYSTEM KEY ONSTANDBY</span>
+                <div className="w-2 h-2 rounded-full bg-[#D4B48C] animate-pulse" />
+                <span className="text-[9px] font-semibold text-[#F5E6D3]/80">SYSTEM KEY ONSTANDBY</span>
               </div>
             </div>
           </div>
