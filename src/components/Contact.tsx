@@ -12,33 +12,63 @@ export default function Contact({ theme }: ContactProps) {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) return;
 
-    // Standard local confirmation simulation
-    setShowSuccess(true);
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
-    setTimeout(() => setShowSuccess(false), 5000);
+    setIsSubmitting(true);
+    setSubmitError('');
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/journeyo2701@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Route Story Inquiry: ${subject || 'Bespoke Vacations Inquiry'}`,
+          Form: "General Contact / Inquiry Memoir",
+          Name: name,
+          Email: email,
+          Subject: subject || "None declared",
+          Message: message
+        })
+      });
+
+      if (response.ok) {
+        setShowSuccess(true);
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+        setTimeout(() => setShowSuccess(false), 6000);
+      } else {
+        setSubmitError("Failed to transmit message. Please try again or email journeyo2701@gmail.com directly.");
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitError("Network connection error. Please verify status & submit again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Theme values
-  const textTitleColor = theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]';
-  const textSubColor = theme === 'day' ? 'text-[#3B2E25]/85' : 'text-[#F5E6D3]/80';
+  const textTitleColor = theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]';
+  const textSubColor = theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]';
   const cardBgClasses = theme === 'day'
-    ? 'bg-[#FFFDFC]/90 border-[#8B6B52]/25 hover:shadow-lg text-[#3B2E25]'
-    : 'bg-[#2A2522]/80 border-[#8B6B52]/30 hover:shadow-lg text-[#F5E6D3]';
+    ? 'bg-[#FFFFFF] border-[#C6B08E]/45 hover:shadow-lg text-[#4A2E1F]'
+    : 'bg-[#2A211B] border-[#4A3A2F]/50 hover:shadow-lg text-[#F5E9DB]';
 
   const inputStyle = theme === 'day'
-    ? 'bg-[#FAF7F2] border-[#8B6B52]/30 text-[#3B2E25] focus:border-[#8B6B52]'
-    : 'bg-[#121212]/60 border-[#8B6B52]/30 text-[#F5E6D3] focus:border-[#D4B48C]';
+    ? 'bg-[#E8DFCF]/30 border-[#C6B08E]/40 text-[#4A2E1F] focus:border-[#8B5E3C]'
+    : 'bg-[#16110D]/60 border-[#4A3A2F]/50 text-[#F5E9DB] focus:border-[#C6B08E]';
 
   const numberStr = '+917742484898';
-  const whatsappUrl = `https://wa.me/917742484898?text=${encodeURIComponent('Hello JOURNEYO! I am seeking immediate VVIP support for planning my next custom journey.')}`;
+  const whatsappUrl = `https://wa.me/917742484898?text=${encodeURIComponent('Hello Route Story! I am seeking immediate VVIP support for planning my next custom journey.')}`;
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-20 relative w-full text-left">
@@ -46,7 +76,7 @@ export default function Contact({ theme }: ContactProps) {
       {/* Header section */}
       <div className="max-w-2xl mb-12 sm:mb-16">
         <span className={`text-xs font-bold tracking-widest uppercase mb-2 block font-mono ${
-          theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'
+          theme === 'day' ? 'text-[#8B5E3C]' : 'text-[#C6B08E]'
         }`}>
           Reach Our Curators
         </span>
@@ -89,8 +119,8 @@ export default function Contact({ theme }: ContactProps) {
                 href={`tel:${numberStr}`}
                 className={`w-full py-3 px-5 rounded-xl border font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 ${
                   theme === 'day'
-                    ? 'border-[#8B6B52]/40 text-[#8B6B52] hover:bg-[#8B6B52]/10'
-                    : 'border-[#8B6B52]/30 text-[#F5E6D3] hover:bg-[#8B6B52]/15'
+                    ? 'border-[#C6B08E]/40 text-[#8B5E3C] hover:bg-[#8B5E3C]/10'
+                    : 'border-[#4A3A2F]/50 text-[#F5E9DB] hover:bg-[#8B5E3C]/15'
                 }`}
               >
                 <Phone className="w-3.5 h-3.5" />
@@ -106,13 +136,13 @@ export default function Contact({ theme }: ContactProps) {
             </h3>
 
             <div className="flex items-start gap-3.5 text-xs">
-              <Mail className={`w-5 h-5 shrink-0 mt-0.5 ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
+              <Mail className={`w-5 h-5 shrink-0 mt-0.5 ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'}`} />
               <div>
-                <span className={`font-bold block mb-1 ${theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'}`}>
+                <span className={`font-bold block mb-1 ${theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]'}`}>
                   Direct Support & Email
                 </span>
-                <p className={`opacity-75 leading-normal font-mono ${theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]/80'}`}>
-                  journeyo2701@gmail.com
+                <p className={`opacity-75 leading-normal font-mono ${theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]/80'}`}>
+                  routestory2701@gmail.com
                 </p>
               </div>
             </div>
@@ -132,39 +162,45 @@ export default function Contact({ theme }: ContactProps) {
         </div>
 
         {/* RIGHT COLUMN: PREMIUM CONTACT FORM AND DISPATCHER */}
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 font-sans">
           <div className={`p-6 sm:p-10 rounded-2xl border backdrop-blur-sm shadow-xl relative ${cardBgClasses}`}>
             <h3 className={`text-lg sm:text-xl font-bold tracking-tight mb-8 flex items-center gap-2 ${textTitleColor}`}>
-              <Compass className={`w-5 h-5 animate-spin-slow ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
+              <Compass className={`w-5 h-5 animate-spin-slow ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'}`} />
               Submit Dispatch Memoir
             </h3>
 
-            {/* Local submission successful notifications */}
+            {/* Submission notifications */}
             <AnimatePresence>
               {showSuccess && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className={`p-4 border text-xs rounded-xl mb-6 flex items-center gap-2 font-medium ${
-                    theme === 'day'
-                      ? 'bg-[#FFFDFC] border-[#8B6B52]/20 text-[#8B6B52]'
-                      : 'bg-[#6B4F3A]/10 border-[#8B6B52]/20 text-[#D4B48C]'
-                  }`}
+                  className="p-4 border text-xs rounded-xl mb-6 flex items-center gap-2 font-medium bg-emerald-500/10 border-emerald-500/35 text-emerald-500"
                 >
-                  <Send className={`w-4 h-4 shrink-0 ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
-                  Your message has been beamed directly to our concierge team. You will receive an encrypted follow-up email.
+                  <Send className="w-4 h-4 shrink-0 text-emerald-500" />
+                  Your message has been sent directly to journeyo2701@gmail.com. We will respond within 24 hours.
+                </motion.div>
+              )}
+              {submitError && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="p-4 border text-xs rounded-xl mb-6 flex items-center gap-2 font-medium bg-rose-500/10 border-rose-500/35 text-rose-500"
+                >
+                  <span className="shrink-0 text-rose-500 font-bold">⚠️</span>
+                  {submitError}
                 </motion.div>
               )}
             </AnimatePresence>
 
             <form onSubmit={handleContactSubmit} className="space-y-5">
-              
               {/* Name & Email (Split) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
-                    theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                    theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]'
                   }`}>
                     Your Name
                   </label>
@@ -180,7 +216,7 @@ export default function Contact({ theme }: ContactProps) {
 
                 <div>
                   <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
-                    theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                    theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]'
                   }`}>
                     Email Address
                   </label>
@@ -195,10 +231,10 @@ export default function Contact({ theme }: ContactProps) {
                 </div>
               </div>
 
-              {/* Subject */}
+               {/* Subject */}
               <div>
                 <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
-                  theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                  theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]'
                 }`}>
                   Subject / Reason
                 </label>
@@ -215,7 +251,7 @@ export default function Contact({ theme }: ContactProps) {
               {/* Message */}
               <div>
                 <label className={`block text-[10px] font-bold uppercase tracking-wider mb-1.5 opacity-80 ${
-                  theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]'
+                  theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]'
                 }`}>
                   Your message
                 </label>
@@ -233,10 +269,11 @@ export default function Contact({ theme }: ContactProps) {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#8B6B52] hover:bg-[#72553E] active:scale-[0.99] text-white font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-[#8B5E3C] hover:bg-[#A47148] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all"
                 >
                   <Send className="w-4 h-4" />
-                  Dispatch Inquiry to Concierge Office
+                  {isSubmitting ? "Sending Ticket..." : "Dispatch Inquiry to Concierge Office"}
                 </button>
               </div>
 

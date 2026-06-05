@@ -1,5 +1,5 @@
 {
-  "name": "JOURNEYO",
+  "name": "Route Story",
   "description": "The world's most premium, cinematic, modern, and emotionally immersive luxury travel platform.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

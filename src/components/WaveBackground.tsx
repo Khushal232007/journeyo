@@ -35,20 +35,20 @@ export default function WaveBackground({ theme }: WaveBackgroundProps) {
     <div className="fixed inset-0 w-full h-full -z-50 overflow-hidden pointer-events-none select-none">
       <div className={`absolute inset-0 w-full h-full transition-colors duration-300 overflow-hidden ${
         isDay 
-          ? 'bg-gradient-to-b from-[#FAF7F2] via-[#F5E6D3]/40 to-[#FAF7F2]' 
-          : 'bg-gradient-to-b from-[#121212] via-[#1E1E1E] to-[#121212]'
+          ? 'bg-gradient-to-b from-[#F7F4EE] via-[#E8DFCF]/30 to-[#F7F4EE]' 
+          : 'bg-gradient-to-b from-[#16110D] via-[#211A15]/80 to-[#16110D]'
       }`}>
         {/* Glowing Sun or Moon Ambience */}
         {isDay ? (
           /* Glowing Golden Soft Sun */
-          <div className="absolute top-[8%] left-[12%] w-[110px] h-[110px] rounded-full bg-[#D4B48C]/40 shadow-[0_0_90px_30px_rgba(212,180,140,0.4)]" />
+          <div className="absolute top-[8%] left-[12%] w-[110px] h-[110px] rounded-full bg-[#D7C2A5]/50 shadow-[0_0_90px_30px_rgba(215,194,165,0.4)]" />
         ) : (
           /* Glowing Moon */
-          <div className="absolute top-[8%] left-[12%] w-[120px] h-[120px] rounded-full bg-[#F5E6D3]/95 shadow-[0_0_80px_20px_rgba(212,180,140,0.3)]" />
+          <div className="absolute top-[8%] left-[12%] w-[120px] h-[120px] rounded-full bg-[#F5E9DB]/95 shadow-[0_0_80px_20px_rgba(198,138,94,0.25)]" />
         )}
         
         <div className={`absolute top-0 left-[5%] w-[40%] h-[40%] rounded-full blur-[130px] transition-colors duration-300 ${
-          isDay ? 'bg-[#8B6B52]/5' : 'bg-[#8B6B52]/10'
+          isDay ? 'bg-[#8B6B52]/5' : 'bg-[#B98A5E]/10'
         }`} />
 
         {/* Static Star Constellations - Only shown during high night solitude */}
@@ -57,14 +57,14 @@ export default function WaveBackground({ theme }: WaveBackgroundProps) {
             {STATIC_STARS.map((star, idx) => (
               <div
                 key={idx}
-                className="absolute rounded-full bg-[#F5E6D3]"
+                className="absolute rounded-full bg-[#F5E9DB]"
                 style={{
                   left: `${star.x}%`,
                   top: `${star.y}%`,
                   width: `${star.size}px`,
                   height: `${star.size}px`,
                   opacity: star.opacity,
-                  boxShadow: star.size > 1.8 ? '0 0 4px 1px rgba(245,230,211,0.4)' : 'none',
+                  boxShadow: star.size > 1.8 ? '0 0 4px 1px rgba(245,233,219,0.4)' : 'none',
                 }}
               />
             ))}
@@ -74,10 +74,10 @@ export default function WaveBackground({ theme }: WaveBackgroundProps) {
         {/* Static Background Clouds for depth */}
         <div className="absolute inset-0 w-full h-full opacity-25">
           <div className={`absolute top-[5%] left-[5%] w-[380px] h-[120px] blur-[50px] rounded-full transition-colors duration-300 ${
-            isDay ? 'bg-[#8B6B52]/5' : 'bg-[#8B6B52]/10'
+            isDay ? 'bg-[#8B6B52]/5' : 'bg-[#B98A5E]/10'
           }`} />
           <div className={`absolute top-[25%] right-[5%] w-[450px] h-[150px] blur-[60px] rounded-full transition-colors duration-300 ${
-            isDay ? 'bg-[#F5E6D3]/30' : 'bg-[#1E1E1E]/40'
+            isDay ? 'bg-[#D7C2A5]/30' : 'bg-[#211A15]/40'
           }`} />
         </div>
 
@@ -85,13 +85,13 @@ export default function WaveBackground({ theme }: WaveBackgroundProps) {
         <div className="absolute bottom-0 left-0 w-full h-[35%] min-h-[220px]">
           {/* Deep ocean base floor */}
           <div className={`absolute bottom-0 w-full h-[60px] transition-colors duration-300 ${
-            isDay ? 'bg-[#FAF7F2]' : 'bg-[#121212]'
+            isDay ? 'bg-[#F7F4EE]' : 'bg-[#16110D]'
           }`} />
 
           {/* Wave 3: Deep Sea Floor with Accent Color / Charcoal */}
           <svg
             className={`absolute bottom-0 w-[100%] h-full transition-colors duration-300 ${
-              isDay ? 'text-[#FAF7F2]/90' : 'text-[#1E1E1E]/90'
+              isDay ? 'text-[#F7F4EE]/90' : 'text-[#211A15]/90'
             }`}
             viewBox="0 0 1440 320"
             preserveAspectRatio="none"
@@ -105,7 +105,7 @@ export default function WaveBackground({ theme }: WaveBackgroundProps) {
           {/* Wave 2: Elegant Mocha with Accent overlay */}
           <svg
             className={`absolute bottom-0 w-[100%] h-full transition-colors duration-300 ${
-              isDay ? 'text-[#8B6B52]/10' : 'text-[#8B6B52]/25'
+              isDay ? 'text-[#8B5E3C]/10' : 'text-[#8B5E3C]/25'
             }`}
             viewBox="0 0 1440 320"
             preserveAspectRatio="none"
@@ -119,7 +119,7 @@ export default function WaveBackground({ theme }: WaveBackgroundProps) {
           {/* Wave 1: Soft Gold glimmer surf line */}
           <svg
             className={`absolute bottom-0 w-[100%] h-full transition-colors duration-300 ${
-              isDay ? 'text-[#D4B48C]/15' : 'text-[#D4B48C]/20'
+              isDay ? 'text-[#D7C2A5]/15' : 'text-[#C6B08E]/20'
             }`}
             viewBox="0 0 1440 320"
             preserveAspectRatio="none"
@@ -132,10 +132,10 @@ export default function WaveBackground({ theme }: WaveBackgroundProps) {
 
           {/* Moonlight / Sunlight Water reflections */}
           <div className={`absolute bottom-[28%] left-[12%] w-[30%] h-[30px] bg-gradient-to-r from-transparent to-transparent blur-md transform skew-x-12 ${
-            isDay ? 'via-[#8B6B52]/5' : 'via-[#D4B48C]/10'
+            isDay ? 'via-[#8B6B52]/5' : 'via-[#B98A5E]/10'
           }`} />
           <div className={`absolute bottom-[20%] left-[17%] w-[20%] h-[20px] bg-gradient-to-r from-transparent to-transparent blur-sm transform -skew-x-12 ${
-            isDay ? 'via-[#D4B48C]/8' : 'via-[#F5E6D3]/12'
+            isDay ? 'via-[#D7C2A5]/8' : 'via-[#D7C2A5]/12'
           }`} />
         </div>
       </div>

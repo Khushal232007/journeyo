@@ -9,7 +9,6 @@ import WaveBackground from './components/WaveBackground';
 import Home from './components/Home';
 import Packages from './components/Packages';
 import Reviews from './components/Reviews';
-import Gallery from './components/Gallery';
 import AboutUs from './components/AboutUs';
 import SpecialRequest from './components/SpecialRequest';
 import Contact from './components/Contact';
@@ -81,13 +80,13 @@ export default function App() {
   };
 
   // Styled helper classes matching user palette
-  const fontColorClass = theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]';
-  const mainBgClass = theme === 'day' ? 'bg-[#FAF7F2]' : 'bg-[#121212]';
+  const fontColorClass = theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]';
+  const mainBgClass = theme === 'day' ? 'bg-[#F7F4EE]' : 'bg-[#16110D]';
 
-  const footerBgClass = theme === 'day' ? 'bg-[#F5E6D3]/60 border-[#8B6B52]/20' : 'bg-[#2A2522]/80 border-[#8B6B52]/20';
-  const footerTitleClass = theme === 'day' ? 'text-[#3B2E25]' : 'text-[#F5E6D3]';
-  const footerTextClass = theme === 'day' ? 'text-[#3B2E25]/70' : 'text-slate-400';
-  const footerAlertClass = theme === 'day' ? 'text-[#3B2E25]/60' : 'text-slate-500';
+  const footerBgClass = theme === 'day' ? 'bg-[#E8DFCF]/60 border-[#C6B08E]/40' : 'bg-[#211A15]/80 border-[#4A3A2F]/50';
+  const footerTitleClass = theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]';
+  const footerTextClass = theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]';
+  const footerAlertClass = theme === 'day' ? 'text-[#6E5847]/70' : 'text-[#D7C2A5]/70';
 
   return (
     <div className={`min-h-screen relative flex flex-col justify-between font-sans overflow-x-hidden ${fontColorClass} ${mainBgClass} transition-colors duration-300`}>
@@ -106,7 +105,7 @@ export default function App() {
       />
 
       {/* 3. Main interactive content frames (Instantly switched, no slide/flicker animations) */}
-      <main id="journeyo-prime-content" className="flex-1 w-full relative">
+      <main id="route-story-prime-content" className="flex-1 w-full relative">
         <div className="w-full">
           {activeTab === 'home' && (
             <Home 
@@ -123,11 +122,6 @@ export default function App() {
           )}
           {activeTab === 'reviews' && (
             <Reviews 
-              theme={theme} 
-            />
-          )}
-          {activeTab === 'gallery' && (
-            <Gallery 
               theme={theme} 
             />
           )}
@@ -160,11 +154,11 @@ export default function App() {
             <div className="flex items-center gap-2">
               <Compass className="w-5 h-5 text-[#D4B48C]" />
               <span className={`text-base font-bold uppercase tracking-widest ${footerTitleClass}`}>
-                JOURNEYO
+                Route Story
               </span>
             </div>
             <p className={`leading-relaxed font-light text-[11px] max-w-sm ${footerTextClass}`}>
-              Launched in 2026, JOURNEYO is an emerging premier travel startup. We are on a mission to redefine high-priority travel craft, organizing bespoke mountain, forest, and islet retreats driven by fresh eco-mindful, high-security standards.
+              Route Story helps travelers discover India through thoughtfully curated journeys, hidden gems, and unforgettable experiences. From mountains to deserts, beaches to forests, we create stories worth telling.
             </p>
           </div>
  
@@ -179,17 +173,25 @@ export default function App() {
               </p>
               <p className="flex items-center gap-1.5">
                 <Mail className="w-3.5 h-3.5 text-[#8B6B52] dark:text-[#D4B48C]" />
-                journeyo2701@gmail.com
+                routestory2701@gmail.com
               </p>
             </div>
           </div>
 
           <div className="md:col-span-4 space-y-3">
             <span className={`font-bold uppercase tracking-wider block ${footerTitleClass}`}>
-              Sovereign Safeguard Note
+              Why Route Story?
             </span>
-            <p className={`leading-relaxed font-light text-[10px] ${footerAlertClass}`}>
-              *Disclaimer: Private helicopter transfers, naturalist escorts, and medical evacuation standbys require specialized secure billing clearings. JOURNEYO offsets charter emissions under strict carbon-mitigation registry numbers. Registered under Uttarakhand Division code JO-B_2026.
+            <p className={`leading-relaxed font-light text-[11px] space-y-1.5 ${footerTextClass}`}>
+              <span className="block flex items-center gap-1.5">
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Personalized Travel Planning
+              </span>
+              <span className="block flex items-center gap-1.5">
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Budget-Friendly Experiences
+              </span>
+              <span className="block flex items-center gap-1.5">
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Dedicated Support
+              </span>
             </p>
           </div>
 
@@ -197,7 +199,7 @@ export default function App() {
 
         {/* Legal copyright footer base */}
         <div className={`max-w-[1280px] mx-auto border-t border-black/5 dark:border-white/5 mt-8 pt-6 text-center text-[10px] flex flex-col sm:flex-row justify-between items-center gap-2 ${footerTextClass}`}>
-          <span>&copy; {new Date().getFullYear()} JOURNEYO Luxury Travel Ltd. All sovereign rights reserved.</span>
+          <span className="font-medium tracking-wider uppercase text-[11px] text-[#8B6B52] dark:text-[#D4B48C]">Your Journey, Your story</span>
         </div>
       </footer>
 

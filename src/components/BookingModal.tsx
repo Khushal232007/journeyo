@@ -18,6 +18,60 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
   });
 
   const [whatsappUrl, setWhatsappUrl] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const handleBookingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.phone) return;
+
+    setIsSubmitting(true);
+    setSubmitError('');
+    setShowSuccess(false);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/journeyo2701@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Expedition Booking: ${packageName || 'Bespoke Trip'} by ${formData.name}`,
+          Form: "Expedition Booking Form",
+          Expedition: packageName || "Customised Package",
+          Explorer_Name: formData.name,
+          WhatsApp_Number: formData.phone,
+          Number_of_Guests: formData.travelers,
+          Luxury_Budget: formData.budget ? `₹${formData.budget}` : "Flexible / Not declared",
+          Travel_Schedule: formData.dates || "Flexible"
+        })
+      });
+
+      if (response.ok) {
+        setShowSuccess(true);
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            phone: '',
+            travelers: '2',
+            budget: '',
+            dates: '',
+          });
+          setShowSuccess(false);
+          onClose();
+        }, 5500);
+      } else {
+        setSubmitError("Transmission error. Please try again or reach journeyo2701@gmail.com directly.");
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitError("Network connection error. Please verify status & try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   // Generate WhatsApp link dynamically on input changes to ensure native anchors are completely functional
   useEffect(() => {
@@ -25,7 +79,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
       ? `₹${Number(formData.budget).toLocaleString('en-IN')}`
       : 'Flexible';
 
-    const message = `*JOURNEYO Luxury Booking Enquiry* \n` +
+    const message = `*Route Story Luxury Booking Enquiry* \n` +
       `=============================\n` +
       `• *Explorer:* ${formData.name || 'Not provided'}\n` +
       `• *Contact:* ${formData.phone || 'Not provided'}\n` +
@@ -34,22 +88,22 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
       `• *Luxury Budget:* ${formattedBudget}\n` +
       `• *Travel Schedule:* ${formData.dates || 'Flexible'}\n` +
       `=============================\n` +
-      `Please connect with me on WhatsApp to finalize my itinerary. Thank you, JOURNEYO.`;
+      `Please connect with me on WhatsApp to finalize my itinerary. Thank you, Route Story.`;
 
     const encoded = encodeURIComponent(message);
-    setWhatsappUrl(`https://wa.me/917742484898?text=${encoded}`);
+    setWhatsappUrl(`https://wa.me/919058831564?text=${encoded}`);
   }, [formData, packageName]);
 
   if (!isOpen) return null;
 
   const isDay = theme === 'day';
   const bgClasses = isDay 
-    ? 'bg-gradient-to-br from-[#FFFDFC] to-[#FAF7F2] text-[#3B2E25] border border-[#8B6B52]/20'
-    : 'bg-gradient-to-br from-[#2A2522] to-[#121212] text-[#F5E6D3] border border-[#8B6B52]/35';
+    ? 'bg-[#FFFFFF] text-[#4A2E1F] border border-[#C6B08E]/45'
+    : 'bg-[#2A211B] text-[#F5E9DB] border border-[#4A3A2F]/50';
 
   const inputStyle = isDay
-    ? 'bg-[#FFFDFC] border-[#8B6B52]/30 text-[#3B2E25] focus:border-[#8B6B52] focus:bg-[#FFFDFC]'
-    : 'bg-[#121212]/70 border-[#8B6B52]/30 text-[#F5E6D3] focus:border-[#D4B48C] focus:bg-[#121212]';
+    ? 'bg-[#E8DFCF]/30 border-[#C6B08E]/40 text-[#4A2E1F] focus:border-[#8B5E3C] focus:bg-[#FFFFFF]'
+    : 'bg-[#16110D]/70 border-[#4A3A2F]/50 text-[#F5E9DB] focus:border-[#C6B08E] focus:bg-[#2A211B]';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -68,7 +122,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
         {/* Header */}
         <div className="flex items-center justify-between mb-6 relative">
           <div>
-            <span className={`text-xs font-semibold tracking-widest uppercase mb-1 block font-mono ${isDay ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`}>
+            <span className={`text-xs font-semibold tracking-widest uppercase mb-1 block font-mono ${isDay ? 'text-[#8B5E3C]' : 'text-[#C6B08E]'}`}>
               Luxury Inquiry
             </span>
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
@@ -76,7 +130,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
             </h3>
             {packageName && (
               <p className="text-sm opacity-70 mt-1 flex items-center gap-1.5 font-medium">
-                <Compass className={`w-3.5 h-3.5 ${isDay ? 'text-[#8B6B52]' : 'text-[#D4B48C]'}`} />
+                <Compass className={`w-3.5 h-3.5 ${isDay ? 'text-[#8B5E3C]' : 'text-[#C6B08E]'}`} />
                 {packageName}
               </p>
             )}
@@ -90,7 +144,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
         </div>
 
         {/* Form Body */}
-        <div className="space-y-4 relative">
+        <form onSubmit={handleBookingSubmit} className="space-y-4 relative">
           {/* Full Name */}
           <div>
             <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5 opacity-80">
@@ -140,11 +194,11 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
                   onChange={(e) => setFormData({ ...formData, travelers: e.target.value })}
                   className={`w-full pl-10 pr-4 py-2.5 rounded-xl border text-sm outline-none transition-all duration-300 cursor-pointer appearance-none ${inputStyle}`}
                 >
-                  <option value="1" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>1 Explorer</option>
-                  <option value="2" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>2 Explorers</option>
-                  <option value="4" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>4 Explorers</option>
-                  <option value="6" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>6+ Explorers</option>
-                  <option value="12" className={isDay ? 'text-[#3B2E25] bg-[#FFFDFC]' : 'text-[#F5E6D3] bg-[#2A2522]'}>VVIP Charter Party (10+)</option>
+                  <option value="1" className={isDay ? 'text-[#4A2E1F] bg-[#FFFFFF]' : 'text-[#F5E9DB] bg-[#2A211B]'}>1 Explorer</option>
+                  <option value="2" className={isDay ? 'text-[#4A2E1F] bg-[#FFFFFF]' : 'text-[#F5E9DB] bg-[#2A211B]'}>2 Explorers</option>
+                  <option value="4" className={isDay ? 'text-[#4A2E1F] bg-[#FFFFFF]' : 'text-[#F5E9DB] bg-[#2A211B]'}>4 Explorers</option>
+                  <option value="6" className={isDay ? 'text-[#4A2E1F] bg-[#FFFFFF]' : 'text-[#F5E9DB] bg-[#2A211B]'}>6+ Explorers</option>
+                  <option value="12" className={isDay ? 'text-[#4A2E1F] bg-[#FFFFFF]' : 'text-[#F5E9DB] bg-[#2A211B]'}>VVIP Charter Party (10+)</option>
                 </select>
               </div>
             </div>
@@ -183,26 +237,46 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
             </div>
           </div>
 
+          {/* Submission and error indicators */}
+          {showSuccess && (
+            <div className="p-4 border text-xs rounded-xl bg-emerald-500/10 border-emerald-500/35 text-emerald-500 font-semibold space-y-1.5">
+              <p>✅ Inquiry submitted directly to journeyo2701@gmail.com!</p>
+              <p className="text-[10px] opacity-90 leading-tight">
+                Our support team is notified. You can also click below to open instant WhatsApp coordinates if preferred.
+              </p>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-[10px] underline tracking-wider uppercase font-bold text-emerald-600 dark:text-emerald-400"
+              >
+                Send via WhatsApp too ↗
+              </a>
+            </div>
+          )}
+
+          {submitError && (
+            <div className="p-3.5 border text-xs rounded-xl bg-rose-500/10 border-rose-500/35 text-rose-500 font-medium">
+              ⚠️ {submitError}
+            </div>
+          )}
+
           {/* Guidelines note */}
           <p className="text-[11px] opacity-60 leading-normal pt-1">
-            Submitting this enquiry opens your instant high-priority gateway in WhatsApp. Our travel coordinators respond within 15 minutes to configure hotel suites and charter flights.
+            Submitting this enquiry transmits specifications to our concierge email instantly. You can optionally open live chat on WhatsApp for priority booking in 15 minutes.
           </p>
 
-          {/* Submit Anchor (colored beautifully in mocha) */}
-          <div className="pt-2">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                setTimeout(() => onClose(), 1050);
-              }}
-              className="w-full py-3.5 rounded-xl bg-[#8B6B52] hover:bg-[#72553E] text-[#F5E6D3] text-center font-bold text-sm uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all duration-300"
+          {/* Submit Action (colored beautifully in mocha) */}
+          <div className="pt-2 font-sans">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-3.5 rounded-xl bg-[#8B5E3C] hover:bg-[#A47148] disabled:opacity-50 disabled:cursor-not-allowed text-[#F5E9DB] text-center font-bold text-sm uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all duration-300"
             >
-              Secure Bespoke Space via WhatsApp
-            </a>
+              {isSubmitting ? "Submitting Inquiry..." : "Submit Reservation / Booking Inquiry"}
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

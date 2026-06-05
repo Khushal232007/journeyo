@@ -7,8 +7,8 @@ interface FloatingActionsProps {
 }
 
 export default function FloatingActions({ theme }: FloatingActionsProps) {
-  const number = '+917742484898';
-  const whatsappUrl = `https://wa.me/917742484898?text=${encodeURIComponent('Hello JOURNEYO! I am looking to plan a premium luxury vacation. Please connect me with a luxury travel architect.')}`;
+  const number = '+919058831564';
+  const whatsappUrl = `https://wa.me/919058831564?text=${encodeURIComponent('Hello Route Story! I am looking to plan a premium luxury vacation. Please connect me with a luxury travel architect.')}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3.5 pointer-events-auto">
@@ -17,11 +17,11 @@ export default function FloatingActions({ theme }: FloatingActionsProps) {
         href={`tel:${number}`}
         whileHover={{ scale: 1.08, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative w-12 h-12 rounded-full flex items-center justify-center border border-white/20 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] bg-[#6B4F3A]/90 dark:bg-sky-600/90 backdrop-blur-md text-white transition-all duration-300"
-        title="Call JOURNEYO Specialist"
+        className="group relative w-12 h-12 rounded-full flex items-center justify-center border border-white/20 shadow-[0_4px_20px_0_rgba(0,0,0,0.15)] bg-[#8B5E3C]/95 dark:bg-[#B98A5E]/95 backdrop-blur-md text-white transition-all duration-300"
+        title="Call Route Story Specialist"
       >
         {/* Glow radar ring */}
-        <span className="absolute inset-x-0 inset-y-0 rounded-full bg-[#6B4F3A]/30 animate-ping group-hover:block" style={{ animationDuration: '3s' }} />
+        <span className="absolute inset-x-0 inset-y-0 rounded-full bg-[#8B5E3C]/30 animate-ping group-hover:block" style={{ animationDuration: '3s' }} />
         
         {/* Contact info overlay tooltip */}
         <span className="absolute right-14 whitespace-nowrap bg-slate-900/95 dark:bg-slate-950/95 text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg border border-slate-800 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">

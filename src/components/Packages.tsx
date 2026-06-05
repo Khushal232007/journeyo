@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Star, Clock, Compass, ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FEATURED_PACKAGES } from '../data';
-import { TravelPackage } from '../types';
 
 interface PackagesProps {
   theme: 'day' | 'night';
@@ -15,11 +14,11 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
   const selectedPackage = FEATURED_PACKAGES.find(p => p.id === selectedPackageId);
 
   // Dynamic values
-  const textTitleColor = theme === 'day' ? 'text-[#6B4F3A]' : 'text-[#F5E6D3]';
-  const textSubColor = theme === 'day' ? 'text-[#6B4F3A]/85' : 'text-[#F5E6D3]/80';
+  const textTitleColor = theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]';
+  const textSubColor = theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]';
   const cardBgClasses = theme === 'day'
-    ? 'bg-[#F5E6D3]/35 border-[#6B4F3A]/20 backdrop-blur-sm hover:shadow-[0_12px_45px_0_rgba(107,79,58,0.08)]'
-    : 'bg-[#2A2522]/80 border-[#8B6B52]/30 backdrop-blur-sm hover:shadow-[0_12px_45px_0_rgba(138,106,82,0.1)]';
+    ? 'bg-[#FFFFFF] border-[#C6B08E]/45 hover:shadow-lg'
+    : 'bg-[#2A211B] border-[#4A3A2F]/50 hover:shadow-lg';
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -36,7 +35,7 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
       <AnimatePresence mode="wait">
         {!selectedPackage ? (
           /* ====================================================
-             1. FEATURED SIGNATURE PACKAGES LIST GRID
+             1. FEATURED SIGNATURE PILGRIM PACKAGES GRID
              ==================================================== */
           <motion.div
             key="packages-list"
@@ -48,14 +47,16 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
           >
             {/* Header Section */}
             <div className="max-w-2xl mb-12 sm:mb-16">
-              <span className="text-xs font-bold tracking-widest uppercase text-[#6B4F3A] dark:text-[#D4B48C] mb-2 block font-mono">
-                Flagship Journeys
+              <span className={`text-xs font-bold tracking-widest uppercase mb-2 block font-mono ${
+                theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'
+              }`}>
+                Featured Expeditions
               </span>
               <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 ${textTitleColor}`}>
-                Our Curated Himalayan Collections
+                Our Curated Sacred Pilgrim Guides
               </h2>
               <p className={`text-sm leading-relaxed ${textSubColor}`}>
-                While JOURNEYO anchors charter flights across POSITANO, BORA BORA, and KYOTO, we take immense pride in launching our flagship limited series of four majestic Himalayan retreats in Uttarakhand. Fully serviced, bespoke, and extremely rare.
+                Experience unparalleled comfort and spiritual renewal. We arrange elite helicopter passages, premium local suites, fast-track temple entries, and personal expert naturalists across majestic mountain coordinates.
               </p>
             </div>
 
@@ -67,7 +68,7 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                   variants={itemVariants}
                   className={`rounded-2xl border overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-1 ${cardBgClasses}`}
                 >
-                  {/* Photo with hover effect */}
+                  {/* Photo with hover zoom effect */}
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
                       src={pkg.image}
@@ -86,7 +87,11 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                       </span>
                     </div>
 
-                    <div className="absolute top-4 right-4 bg-[#6B4F3A]/90 backdrop-blur-md rounded-lg text-white font-bold text-xs px-3 py-1 flex items-center gap-1 border border-[#6B4F3A]/35">
+                    <div className={`absolute top-4 right-4 backdrop-blur-md rounded-lg font-bold text-xs px-3 py-1 flex items-center gap-1 border ${
+                      theme === 'day' 
+                        ? 'bg-[#8B5E3C]/90 text-white border-[#C6B08E]/30' 
+                        : 'bg-[#8B5E3C]/90 text-[#F5E9DB] border-[#4A3A2F]/35'
+                    }`}>
                       <Star className="w-3.5 h-3.5 fill-white text-amber-400" />
                       {pkg.rating}
                     </div>
@@ -105,45 +110,38 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                   <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                     <div>
                       {/* Overview quote */}
-                      <p 
-                        className={`text-xs leading-relaxed opacity-75 mb-6 ${theme === 'day' ? '' : 'text-[#F5E6D3]/80'}`}
-                        style={theme === 'day' ? { color: '#3f4469' } : undefined}
-                      >
+                      <p className={`text-xs leading-relaxed mb-6 ${theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]/90'}`}>
                         {pkg.overview}
                       </p>
 
-                      {/* Flagship Parameters checklist */}
+                      {/* Flagship Parameters checklist - displays all key highlights elegantly */}
                       <div className="space-y-2.5 mb-8">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B4F3A] dark:text-[#D4B48C] block mb-2.5">
-                          Bespoke Masterpiece Inclusions
+                        <span className={`text-[10px] font-bold uppercase tracking-wider block mb-2.5 ${
+                          theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'
+                        }`}>
+                          Pilgrimage Key Highlights
                         </span>
-                        {pkg.highlights.slice(0, 3).map((hl, idx) => (
+                        {pkg.highlights.map((hl, idx) => (
                           <div key={idx} className="flex items-start gap-2.5 text-xs">
-                            <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${theme === 'day' ? 'text-[#6B4F3A]' : 'text-[#D4B48C]'}`} />
-                            <span 
-                              className={`opacity-80 ${theme === 'day' ? '' : 'text-[#F5E6D3]/85'}`}
-                              style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
-                            >
+                            <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'}`} />
+                            <span className={theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]'}>
                               {hl}
                             </span>
                           </div>
                         ))}
-                        {pkg.highlights.length > 3 && (
-                          <p className={`text-[10px] italic pl-6 ${theme === 'day' ? 'text-[#6B4F3A]/80' : 'text-[#D4B48C]/80'}`}>
-                            + {pkg.highlights.length - 3} other premium masterclass entries...
-                          </p>
-                        )}
                       </div>
                     </div>
 
                     {/* Pricing and Action row */}
-                    <div className="pt-4 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
+                    <div className={`pt-4 border-t flex items-center justify-between ${
+                      theme === 'day' ? 'border-[#C6B08E]/25' : 'border-white/5'
+                    }`}>
                       <div>
-                        <span className="text-[10px] uppercase font-semibold text-slate-500 dark:text-slate-400 block">
+                        <span className="text-[10px] uppercase font-semibold text-slate-500 block">
                           Bespoke Booking From
                         </span>
-                        <span className={`text-xl sm:text-2xl font-black ${theme === 'day' ? 'text-teal-950' : 'text-white'}`}>
-                          {pkg.pricing} <span className="text-xs font-medium text-slate-500">/ traveler</span>
+                        <span className={`text-xl sm:text-2xl font-black ${theme === 'day' ? 'text-[#4A2E1F]' : 'text-white'}`}>
+                          {pkg.pricing} <span className="text-xs font-medium text-slate-500">/ explorer</span>
                         </span>
                       </div>
 
@@ -152,16 +150,16 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                           onClick={() => setSelectedPackageId(pkg.id)}
                           className={`px-3.5 py-2.5 rounded-xl border text-xs font-bold uppercase tracking-widest cursor-pointer transition-all duration-300 ${
                             theme === 'day'
-                              ? 'border-[#6B4F3A]/20 text-[#6B4F3A] hover:bg-[#6B4F3A]/5'
-                              : 'border-[#8B6B52]/35 text-[#F5E6D3] hover:bg-[#8B6B52]/15'
+                              ? 'border-[#C6B08E]/40 text-[#4A2E1F] hover:bg-[#8B5E3C]/5 bg-white'
+                              : 'border-[#4A3A2F]/50 text-[#F5E9DB] hover:bg-[#8B5E3C]/15'
                           }`}
                         >
-                          Read Itinerary
+                          Read More
                         </button>
                         
                         <button
                           onClick={() => onBookPackage(pkg.title)}
-                          className="px-4 py-2.5 bg-[#6B4F3A] hover:bg-[#5A402E] rounded-xl text-white font-bold text-xs uppercase tracking-widest shadow-md flex items-center gap-1 cursor-pointer transition-all duration-300"
+                          className="px-4 py-2.5 bg-[#8B5E3C] hover:bg-[#A47148] rounded-xl text-white font-bold text-xs uppercase tracking-widest shadow-md flex items-center gap-1 cursor-pointer transition-all duration-300"
                         >
                           Book Now
                         </button>
@@ -190,12 +188,12 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                 onClick={() => setSelectedPackageId(null)}
                 className={`group px-4 py-2.5 rounded-xl border backdrop-blur-sm font-bold text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-all duration-300 ${
                   theme === 'day'
-                    ? 'border-[#6B4F3A]/20 text-[#6B4F3A] bg-[#F5E6D3]/35 hover:bg-[#F5E6D3]/60'
-                    : 'border-[#8B6B52]/30 text-[#F5E6D3] bg-[#2A2522]/50 hover:bg-[#2A2522]/80'
+                    ? 'border-[#C6B08E]/40 text-[#4A2E1F] bg-[#FFFFFF] hover:bg-[#E8DFCF]'
+                    : 'border-[#4A3A2F]/50 text-[#F5E9DB] bg-[#2A211B] hover:bg-[#211A15]'
                 }`}
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                Back to Himalayan Expeditions
+                Back to Featured Expeditions
               </button>
             </div>
 
@@ -211,12 +209,12 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
 
               <div className="absolute bottom-0 inset-x-0 p-6 sm:p-10 text-white text-left">
                 <div className="flex gap-3 mb-2 flex-wrap">
-                  <span className="px-2.5 py-1 bg-[#6B4F3A]/95 rounded-md text-white font-semibold text-[9px] uppercase tracking-wider">
-                    {selectedPackage.duration} Custom
+                  <span className="px-2.5 py-1 bg-[#8B5E3C]/95 rounded-md text-white font-semibold text-[9px] uppercase tracking-wider">
+                    {selectedPackage.duration} Custom Guide
                   </span>
                   <span className="px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-md text-slate-100 font-semibold text-[9px] uppercase tracking-wider flex items-center gap-1">
                     <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
-                    {selectedPackage.rating} Rated
+                    {selectedPackage.rating} Rating
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm font-bold tracking-widest uppercase text-amber-200 mb-1.5">
@@ -234,29 +232,28 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                 <h3 className={`text-xl font-extrabold tracking-tight ${textTitleColor}`}>
                   Expedition Overview
                 </h3>
-                <p className={`text-sm leading-relaxed opacity-85 ${theme === 'day' ? 'text-teal-950' : 'text-[#F5E6D3]/90'}`}>
+                <p className={`text-sm leading-relaxed opacity-85 ${theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]'}`}>
                   {selectedPackage.overview}
                 </p>
-                <div className={`p-5 rounded-2xl border ${theme === 'day' ? 'bg-[#F5E6D3]/40 border-[#6B4F3A]/15' : 'bg-[#2A2522]/45 border-[#8B6B52]/25'}`}>
-                  <p className="text-xs italic font-medium opacity-80 leading-relaxed text-[#6B4F3A] dark:text-[#D4B48C]">
-                    "This represents a restricted entry, hand-guided botanical and luxury camping pathway. No heavy infrastructure can be spotted. All resources, coordinates, and personal medical evacuation capabilities remain synchronized under active secure radar."
+                <div className={`p-5 rounded-2xl border ${theme === 'day' ? 'bg-[#E8DFCF]/40 border-[#C6B08E]/30' : 'bg-[#211A15]/60 border-[#4A3A2F]/40'}`}>
+                  <p className={`text-xs italic font-medium opacity-85 leading-relaxed ${theme === 'day' ? 'text-[#8B5E3C]' : 'text-[#C6B08E]'}`}>
+                    "This represents a premium high-priority pilgrimage service featuring VIP physical escorts, specialized fast-track entry, comfortable premium ground logistics, and standby helicopter routes. All transfers remain synced with active ground support team for top-grade safety."
                   </p>
                 </div>
               </div>
 
               <div className={`lg:col-span-5 rounded-2xl border p-6 sm:p-8 backdrop-blur-sm flex flex-col justify-between ${cardBgClasses}`}>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-[#6B4F3A] dark:text-[#D4B48C] mb-4 block font-mono">
-                    Bespoke Inclusions
+                  <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 block font-mono ${
+                    theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'
+                  }`}>
+                    Expedition Highlights
                   </h4>
                   <div className="space-y-4">
                     {selectedPackage.highlights.map((hl, idx) => (
                       <div key={idx} className="flex gap-3 text-xs leading-normal">
-                        <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${theme === 'day' ? 'text-[#6B4F3A]' : 'text-[#D4B48C]'}`} />
-                        <span 
-                          className={`opacity-90 ${theme === 'day' ? '' : 'text-[#F5E6D3]'}`}
-                          style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
-                        >
+                        <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'}`} />
+                        <span className={theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]'}>
                           {hl}
                         </span>
                       </div>
@@ -264,22 +261,21 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-black/5 dark:border-white/5 mt-8 flex justify-between items-center">
+                <div className={`pt-6 border-t mt-8 flex justify-between items-center ${
+                  theme === 'day' ? 'border-[#C6B08E]/25' : 'border-white/5'
+                }`}>
                   <div>
-                    <span 
-                      className={`text-[10px] uppercase font-semibold block ${theme === 'day' ? '' : 'text-slate-500'}`}
-                      style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
-                    >
+                    <span className="text-[10px] uppercase font-semibold text-slate-500 block">
                       Pricing From
                     </span>
-                    <span className={`text-2xl font-black ${theme === 'day' ? 'text-[#6B4F3A]' : 'text-white'}`}>{selectedPackage.pricing}</span>
+                    <span className={`text-2xl font-black ${theme === 'day' ? 'text-[#4A2E1F]' : 'text-white'}`}>{selectedPackage.pricing}</span>
                   </div>
                   <button
                     onClick={() => onBookPackage(selectedPackage.title)}
-                    className="px-5 py-3 rounded-xl bg-[#6B4F3A] hover:bg-[#5A402E] text-white font-bold text-xs uppercase tracking-widest shadow-lg flex items-center gap-1.5 cursor-pointer transition-all"
+                    className="px-5 py-3 rounded-xl bg-[#8B5E3C] hover:bg-[#A47148] text-white font-bold text-xs uppercase tracking-widest shadow-lg flex items-center gap-1.5 cursor-pointer transition-all duration-300"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    Book Space
+                    Book Now
                   </button>
                 </div>
               </div>
@@ -287,19 +283,29 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
 
             {/* Day By Day Detailed Journey Schedule */}
             <div className="mb-16">
-              <span className="text-xs font-bold tracking-widest uppercase text-[#6B4F3A] dark:text-[#D4B48C] mb-2 block font-mono">
+              <span className={`text-xs font-bold tracking-widest uppercase mb-2 block font-mono ${
+                theme === 'day' ? 'text-[#8B6B52]' : 'text-[#B98A5E]'
+              }`}>
                 The Storyline
               </span>
               <h2 className={`text-2xl sm:text-3xl font-extrabold tracking-tight mb-8 ${textTitleColor}`}>
                 Day-by-Day Escapade
               </h2>
 
-              <div className="space-y-12 sm:space-y-16 relative before:absolute before:inset-y-2 before:left-[19px] sm:before:left-[35px] before:w-[1.5px] before:bg-gradient-to-b before:from-[#6B4F3A] before:via-[#6B4F3A]/30 before:to-transparent">
+              <div className={`space-y-12 sm:space-y-16 relative before:absolute before:inset-y-2 before:left-[19px] sm:before:left-[35px] before:w-[1.5px] ${
+                theme === 'day' 
+                  ? 'before:bg-gradient-to-b before:from-[#C6B08E] before:via-[#C6B08E]/30 before:to-transparent' 
+                  : 'before:bg-gradient-to-b before:from-[#4A3A2F] before:via-[#4A3A2F]/30 before:to-transparent'
+              }`}>
                 {selectedPackage.itinerary.map((dayItem) => (
-                  <div key={dayItem.day} className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start relative PL-2 sm:pl-0">
+                  <div key={dayItem.day} className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start relative pl-2 sm:pl-0">
                     
                     {/* Day circle bullet */}
-                    <div className="absolute left-0 top-1 w-10 sm:w-18 h-10 sm:h-18 rounded-full border bg-white dark:bg-[#2A2522] border-[#6B4F3A]/30 dark:border-[#8B6B52]/40 shadow-md flex items-center justify-center text-[#6B4F3A] dark:text-[#F5E6D3] select-none z-10 shrink-0">
+                    <div className={`absolute left-0 top-1 w-10 sm:w-18 h-10 sm:h-18 rounded-full border shadow-md flex items-center justify-center select-none z-10 shrink-0 ${
+                      theme === 'day' 
+                        ? 'bg-[#FFFFFF] border-[#C6B08E]/30 text-[#8B5E3C]' 
+                        : 'bg-[#2A211B] border-[#4A3A2F]/40 text-[#C6B08E]'
+                    }`}>
                       <div className="text-center">
                         <span className="text-[10px] uppercase tracking-wider font-bold block leading-none">Day</span>
                         <span className="text-sm sm:text-lg font-black leading-none">{dayItem.day < 10 ? `0${dayItem.day}` : dayItem.day}</span>
@@ -310,10 +316,10 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                     <div className="pl-12 sm:pl-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                       {/* Left: day description */}
                       <div className="lg:col-span-7 text-left space-y-4">
-                        <h4 className={`text-lg sm:text-xl font-bold tracking-tight ${theme === 'day' ? 'text-[#6B4F3A]' : 'text-[#F5E6D3]'}`}>
+                        <h4 className={`text-lg sm:text-xl font-bold tracking-tight ${theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]'}`}>
                           {dayItem.title}
                         </h4>
-                        <p className={`text-xs sm:text-sm leading-relaxed opacity-80 ${theme === 'day' ? 'text-[#6B4F3A]/90' : 'text-[#F5E6D3]/85'}`}>
+                        <p className={`text-xs sm:text-sm leading-relaxed opacity-80 ${theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]/85'}`}>
                           {dayItem.description}
                         </p>
                         
@@ -322,10 +328,10 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                           {dayItem.highlights.map((param, pIdx) => (
                             <span 
                               key={pIdx}
-                              className={`px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide uppercase transition-colors ${
+                              className={`px-3 py-1 rounded-lg text-[10px] font-bold tracking-brand transitions-all ${
                                 theme === 'day'
-                                  ? 'bg-[#F5E6D3]/40 text-[#6B4F3A] border border-[#6B4F3A]/15 font-mono'
-                                  : 'bg-[#8B6B52]/15 text-[#D4B48C] border border-[#8B6B52]/30'
+                                  ? 'bg-[#E8DFCF] text-[#4A2E1F] border border-[#C6B08E]/25 font-mono'
+                                  : 'bg-[#2A211B] text-[#D7C2A5] border border-[#4A3A2F]/30'
                               }`}
                             >
                               {param}
@@ -336,7 +342,9 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
 
                       {/* Right: day specific picture */}
                       <div className="lg:col-span-5">
-                        <div className="relative aspect-video rounded-xl overflow-hidden border border-white/20 dark:border-[#8B6B52]/20 shadow-lg">
+                        <div className={`relative aspect-video rounded-xl overflow-hidden border shadow-lg ${
+                          theme === 'day' ? 'border-[#8B6B52]/20' : 'border-[#8B6B52]/20'
+                        }`}>
                           <img
                             src={dayItem.image}
                             alt={dayItem.title}
@@ -354,17 +362,16 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
 
             {/* Bottom Final CTA */}
             <div className={`rounded-2xl border p-8 sm:p-12 text-center relative overflow-hidden shadow-xl ${cardBgClasses}`}>
-              <div className="absolute top-[-20%] left-[-20%] w-[350px] h-[350px] rounded-full bg-[#6B4F3A]/[3%] blur-[55px]" />
-              <div className="absolute bottom-[-20%] right-[-20%] w-[350px] h-[350px] rounded-full bg-[#D4B48C]/[3%] blur-[55px]" />
+              <div className="absolute top-[-20%] left-[-20%] w-[350px] h-[350px] rounded-full bg-[#8B5E3C]/[3%] blur-[55px]" />
+              <div className="absolute bottom-[-20%] right-[-20%] w-[350px] h-[350px] rounded-full bg-[#C6B08E]/[3%] blur-[55px]" />
 
               <h3 className={`text-2xl sm:text-3xl font-black mb-3 text-center relative ${textTitleColor}`}>
                 Ready to Enter the Sanctuary?
               </h3>
-              <p 
-                className={`max-w-md mx-auto text-xs sm:text-sm leading-relaxed mb-8 relative ${theme === 'day' ? '' : textSubColor}`}
-                style={theme === 'day' ? { color: '#6B4F3A' } : undefined}
-              >
-                Secure space on this private {selectedPackage.duration} expedition. Curated spaces are restricted to four groups per season to preserve full ecological solitude.
+              <p className={`max-w-md mx-auto text-xs sm:text-sm leading-relaxed mb-8 relative ${
+                theme === 'day' ? 'text-[#6E5847]' : 'text-[#D7C2A5]'
+              }`}>
+                Secure your helicopter seat and VIP priority clearance on this premium {selectedPackage.duration} pilgrimage. Spaces are curated for excellence and fully managed end-to-end.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 relative">
@@ -372,8 +379,8 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
                   onClick={() => setSelectedPackageId(null)}
                   className={`px-5 py-3 rounded-xl border text-xs font-bold uppercase tracking-widest cursor-pointer transition-all duration-300 ${
                     theme === 'day'
-                      ? 'border-[#6B4F3A]/25 text-[#6B4F3A] hover:bg-[#F5E6D3]/40'
-                      : 'border-[#8B6B52]/30 text-[#F5E6D3] hover:bg-[#8B6B52]/15'
+                      ? 'border-[#C6B08E]/30 text-[#4A2E1F] bg-[#FFFFFF] hover:bg-[#E8DFCF]'
+                      : 'border-[#4A3A2F]/50 text-[#F5E9DB] hover:bg-white/5'
                   }`}
                 >
                   Return to Packages
@@ -381,7 +388,7 @@ export default function Packages({ theme, onBookPackage }: PackagesProps) {
 
                 <button
                   onClick={() => onBookPackage(selectedPackage.title)}
-                  className="px-6 py-3 bg-[#6B4F3A] hover:bg-[#5A402E] rounded-xl text-white font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all"
+                  className="px-6 py-3 bg-[#8B5E3C] hover:bg-[#A47148] rounded-xl text-white font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all duration-300"
                 >
                   <MessageCircle className="w-4.5 h-4.5" />
                   Request Booking via WhatsApp
