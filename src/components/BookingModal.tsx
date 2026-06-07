@@ -38,7 +38,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          _subject: `New Expedition Booking: ${packageName || 'Bespoke Trip'} by ${formData.name}`,
+          _subject: `New Route Story Inquiry: ${packageName || 'Bespoke Trip'} by ${formData.name}`,
           Form: "Expedition Booking Form",
           Expedition: packageName || "Customised Package",
           Explorer_Name: formData.name,
@@ -51,6 +51,14 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
 
       if (response.ok) {
         setShowSuccess(true);
+        
+        // Automatically open the prefilled WhatsApp link in a new tab as requested
+        try {
+          window.open(whatsappUrl, '_blank');
+        } catch (err) {
+          console.error("Popup blocker prevented auto-opening WhatsApp. Direct link is displayed.", err);
+        }
+
         setTimeout(() => {
           setFormData({
             name: '',
@@ -63,7 +71,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
           onClose();
         }, 5500);
       } else {
-        setSubmitError("Transmission error. Please try again or reach journeyo2701@gmail.com directly.");
+        setSubmitError("Transmission error. Please try again or reach our travel curation desk directly.");
       }
     } catch (err) {
       console.error(err);
@@ -240,7 +248,7 @@ export default function BookingModal({ isOpen, onClose, packageName = '', theme 
           {/* Submission and error indicators */}
           {showSuccess && (
             <div className="p-4 border text-xs rounded-xl bg-emerald-500/10 border-emerald-500/35 text-emerald-500 font-semibold space-y-1.5">
-              <p>✅ Inquiry submitted directly to journeyo2701@gmail.com!</p>
+              <p>✅ Inquiry submitted directly to our travel planners!</p>
               <p className="text-[10px] opacity-90 leading-tight">
                 Our support team is notified. You can also click below to open instant WhatsApp coordinates if preferred.
               </p>

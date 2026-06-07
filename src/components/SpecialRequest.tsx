@@ -70,7 +70,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
         });
         setTimeout(() => setShowSuccess(false), 8000);
       } else {
-        setSubmitError("Failed to submit details to email. Please try again or contact journeyo2701@gmail.com directly.");
+        setSubmitError("Failed to submit details. Please try again or contact our travel curators directly.");
       }
     } catch (err) {
       console.error(err);
@@ -84,7 +84,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
   useEffect(() => {
     const selectedAddOns = formData.addOns.length > 0 ? formData.addOns.map(a => `✅ ${a}`).join(', ') : 'None';
 
-    const message = `*Customize Your Trip With Root Story* \n` +
+    const message = `*Customize Your Trip With Route Story* \n` +
       `=============================\n` +
       `• *Destination / Area:* ${formData.destination || 'e.g. Goa, Manali, Kashmir, Meghalaya'}\n` +
       `• *Contact Number:* ${formData.phone || 'e.g. +91 99999 99999'}\n` +
@@ -117,10 +117,10 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
       {/* Header section */}
       <div className="max-w-2xl mb-12 sm:mb-16">
         <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 ${textTitleColor}`}>
-          Customize Your Trip With Root Story
+          Customize Your Trip With Route Story
         </h2>
         <p className={`text-sm leading-relaxed ${textSubColor}`}>
-          Can’t find the perfect package? Tell us your destination, budget, travel dates, and preferences. Our team will create a personalized itinerary designed just for you.
+          Tell us your desired destination, preferences, and timeline. Our travel creators will craft a custom, slow-paced itinerary tailored uniquely to your journey.
         </p>
       </div>
 
@@ -308,7 +308,7 @@ export default function SpecialRequest({ theme }: SpecialRequestProps) {
                 <div className="p-4 border text-xs rounded-xl mb-4 bg-emerald-500/10 border-emerald-500/35 text-emerald-500 font-semibold space-y-2">
                   <p className="flex items-center gap-1.5">
                     <CheckCircle className="w-4 h-4 shrink-0 text-emerald-500" />
-                    <span>Your request specifications have been sent directly to journeyo2701@gmail.com!</span>
+                    <span>Your request specifications have been safely coordinated and delivered directly to our planning curators!</span>
                   </p>
                   <p className="text-[11px] opacity-90 leading-normal">
                     Our curators will build your customized itinerary and contact you within 24 hours. Interested in chatting with us on WhatsApp right away? Click below:

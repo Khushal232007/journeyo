@@ -18,6 +18,9 @@ export interface TravelPackage {
   overview: string;
   highlights: string[];
   itinerary: ItineraryDay[];
+  category?: string;
+  difficulty?: string;
+  bestSeason?: string | string[];
 }
 
 export interface Review {
@@ -28,6 +31,7 @@ export interface Review {
   image?: string;
   date: string;
   destination?: string;
+  hidden?: boolean;
 }
 
 export interface GalleryItem {

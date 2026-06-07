@@ -158,7 +158,7 @@ export default function App() {
               </span>
             </div>
             <p className={`leading-relaxed font-light text-[11px] max-w-sm ${footerTextClass}`}>
-              Route Story helps travelers discover India through thoughtfully curated journeys, hidden gems, and unforgettable experiences. From mountains to deserts, beaches to forests, we create stories worth telling.
+              We work as a small team of travelers to design simple, slow, and authentic routes. Instead of rushed group tours, we help you connect with real local hosts, cozy stays, and quiet mountain paths.
             </p>
           </div>
  
@@ -180,17 +180,17 @@ export default function App() {
 
           <div className="md:col-span-4 space-y-3">
             <span className={`font-bold uppercase tracking-wider block ${footerTitleClass}`}>
-              Why Route Story?
+              Our Narrative
             </span>
             <p className={`leading-relaxed font-light text-[11px] space-y-1.5 ${footerTextClass}`}>
               <span className="block flex items-center gap-1.5">
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Personalized Travel Planning
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Story-Driven Personal Routes
               </span>
               <span className="block flex items-center gap-1.5">
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Budget-Friendly Experiences
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Deep Heritage & Narrative Depth
               </span>
               <span className="block flex items-center gap-1.5">
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Dedicated Support
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> Committed Human Companion
               </span>
             </p>
           </div>
@@ -199,7 +199,9 @@ export default function App() {
 
         {/* Legal copyright footer base */}
         <div className={`max-w-[1280px] mx-auto border-t border-black/5 dark:border-white/5 mt-8 pt-6 text-center text-[10px] flex flex-col sm:flex-row justify-between items-center gap-2 ${footerTextClass}`}>
-          <span className="font-medium tracking-wider uppercase text-[11px] text-[#8B6B52] dark:text-[#D4B48C]">Your Journey, Your story</span>
+          <span className="font-medium tracking-wider uppercase text-[11px] text-[#8B6B52] dark:text-[#D4B48C]">
+            Route Story • Slow, personal routes planned by real travelers.
+          </span>
         </div>
       </footer>
 

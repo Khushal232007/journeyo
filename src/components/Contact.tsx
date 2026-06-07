@@ -46,7 +46,7 @@ export default function Contact({ theme }: ContactProps) {
         setMessage('');
         setTimeout(() => setShowSuccess(false), 6000);
       } else {
-        setSubmitError("Failed to transmit message. Please try again or email journeyo2701@gmail.com directly.");
+        setSubmitError("Failed to transmit message. Please try again or contact our team via WhatsApp.");
       }
     } catch (err) {
       console.error(err);
@@ -179,7 +179,7 @@ export default function Contact({ theme }: ContactProps) {
                   className="p-4 border text-xs rounded-xl mb-6 flex items-center gap-2 font-medium bg-emerald-500/10 border-emerald-500/35 text-emerald-500"
                 >
                   <Send className="w-4 h-4 shrink-0 text-emerald-500" />
-                  Your message has been sent directly to journeyo2701@gmail.com. We will respond within 24 hours.
+                  Your message has been sent directly to our travel curators. We will respond within 24 hours.
                 </motion.div>
               )}
               {submitError && (

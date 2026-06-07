@@ -1,0 +1,502 @@
+[
+  {
+    "slug": "haridwar",
+    "name": "Haridwar",
+    "tagline": "Gateway to the Gods",
+    "shortDescription": "One of the seven sacred cities of India, Haridwar sits where the Ganga descends from the Himalayas. The Har Ki Pauri ghat and the mesmerising Ganga Aarti make it an unforgettable spiritual experience.",
+    "images": [
+      "/images/chalo/haridwar.webp"
+    ],
+    "badge": "Spiritual",
+    "guideContent": {
+      "overview": "Haridwar is one of Hinduism's holiest cities, located where the River Ganga exits the Himalayan foothills into the Indo-Gangetic Plain. It is a major pilgrimage site and the starting point for the Char Dham Yatra.",
+      "history": "Haridwar finds mention in ancient Hindu scriptures including the Mahabharata and Vedas. The city has been a centre of Vedic culture, spirituality, and yoga for thousands of years. The Kumbh Mela, held here every 12 years, is the world's largest religious gathering.",
+      "spiritualImportance": "Haridwar is one of the four sites of the Kumbh Mela and is regarded as a doorway (dwar) to the divine (Hari). Bathing in the Ganga here is believed to wash away sins and grant moksha.",
+      "bestTimeToVisit": "October–February for pleasant weather and festivals. Avoid July–August monsoon season for outdoor ghats. The Kumbh and Ardh-Kumbh years bring millions of pilgrims.",
+      "travelTips": [
+        "Visit Har Ki Pauri at sunset for the Ganga Aarti — arrive at least 30 minutes early for a good spot.",
+        "Dress modestly; shorts and sleeveless tops are discouraged near temple areas.",
+        "Use the prasad stalls near the ghat; avoid eating from unlicensed street vendors.",
+        "Keep your belongings secure in crowds, especially during festival season.",
+        "Rickshaws and e-rickshaws are the best way to get around the city center."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Rishikesh",
+          "distance": "25 km",
+          "description": "Yoga capital of the world with the iconic Ram Jhula and Lakshman Jhula bridges."
+        },
+        {
+          "name": "Chilla Wildlife Sanctuary",
+          "distance": "10 km",
+          "description": "Part of Rajaji National Park, home to elephants and tigers."
+        },
+        {
+          "name": "Mansa Devi Temple",
+          "distance": "3 km",
+          "description": "Hilltop temple reached via cable car with panoramic Ganga views."
+        },
+        {
+          "name": "Rajaji National Park",
+          "distance": "20 km",
+          "description": "Rich biodiversity park perfect for jeep safaris and birdwatching."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "rishikesh",
+    "name": "Rishikesh",
+    "tagline": "Yoga Capital of the World",
+    "shortDescription": "Set in the Himalayan foothills on the banks of the sacred Ganga, Rishikesh is renowned for its ashrams, yoga centres, white-water rafting, and the iconic suspension bridges — Ram Jhula and Lakshman Jhula.",
+    "images": [
+      "/images/chalo/rishikesh.webp"
+    ],
+    "badge": "Adventure & Spiritual",
+    "guideContent": {
+      "overview": "Rishikesh blends spiritual heritage with adventure tourism. Sitting at the foothills of the Garhwal Himalayas, it is the launchpad for treks to Kedarnath, Badrinath, Gangotri and Yamunotri.",
+      "history": "Rishikesh has been a centre of Hindu religion and philosophy since ancient times. The town gained global fame in 1968 when The Beatles visited Maharishi Mahesh Yogi's ashram here. Today it is the world's yoga capital, attracting seekers and adventurers alike.",
+      "spiritualImportance": "Rishikesh is where Lord Vishnu is said to have appeared to the sage Raibhya Rishi. The city hosts hundreds of ashrams and is considered sacred ground for meditation and self-realisation.",
+      "bestTimeToVisit": "February–May and September–November offer ideal conditions for yoga, trekking, and rafting. Monsoon (July–August) brings strong currents in the Ganga — rafting is restricted.",
+      "travelTips": [
+        "Rafting season runs February to May and September to November; book in advance during peak season.",
+        "Stay in Tapovan or Swarg Ashram zones for a quieter, more spiritual experience.",
+        "Bungee jumping at Jumpin Heights (83m) is one of the highest in Asia — book ahead.",
+        "Alcohol and non-vegetarian food are prohibited in the main city areas.",
+        "Early morning yoga sessions at the ghats are free — locals often lead these."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Neer Garh Waterfall",
+          "distance": "5 km",
+          "description": "A scenic 3-tiered waterfall reachable via a short trek through forest."
+        },
+        {
+          "name": "Haridwar",
+          "distance": "25 km",
+          "description": "For the Ganga Aarti and Kumbh Mela experience."
+        },
+        {
+          "name": "Shivpuri",
+          "distance": "16 km",
+          "description": "Prime spot for river rafting and camping on the Ganga banks."
+        },
+        {
+          "name": "Mussoorie",
+          "distance": "78 km",
+          "description": "Queen of Hills — colonial charm and Himalayan vistas."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kainchi-dham",
+    "name": "Kainchi Dham",
+    "tagline": "In the Grace of Neem Karoli Baba",
+    "shortDescription": "Kainchi Dham is a famous spiritual ashram near Nainital, Uttarakhand, dedicated to Neem Karoli Baba. Surrounded by hills and forests, it is known for its peaceful atmosphere and attracts devotees from all over the world. Many visitors come here to meditate, seek blessings, and experience spiritual calm.",
+    "images": [
+      "/images/chalo/kainchi.webp"
+    ],
+    "badge": "Spiritual",
+    "guideContent": {
+      "overview": "Kainchi Dham is a revered spiritual ashram located near Nainital in Uttarakhand, dedicated to Neem Karoli Baba. Nestled in the Kumaon hills, it is known for its peaceful environment and divine energy, attracting devotees and spiritual seekers from across the world.",
+      "history": "Rishikesh has been a centre of Hindu religion and philosophy since ancient times. The town gained global fame in 1968 when The Beatles visited Maharishi Mahesh Yogi's ashram here. Today it is the world's yoga capital, attracting seekers and adventurers alike.",
+      "spiritualImportance": "Kainchi Dham was established in the 1960s by Neem Karoli Baba, a respected Hindu saint known for his teachings of love, service, and devotion. The ashram gained international recognition after being visited by famous personalities such as Steve Jobs and Mark Zuckerberg.It is believed that sincere prayers and meditation here bring inner peace and spiritual growth. The temple complex remains a major center for bhajans, satsangs, and spiritual gatherings.",
+      "bestTimeToVisit": [
+        "March–June & September–November offer pleasant weather and clear mountain views.",
+        "July–August (Monsoon) brings greenery but also slippery roads.",
+        "June (Annual Bhandara) attracts thousands of devotees — expect heavy crowds."
+      ],
+      "travelTips": [
+        "Visit early morning for a peaceful darshan experience.",
+        "Carry warm clothes in winter as temperatures drop significantly.",
+        "Maintain silence and follow temple rules inside the premises.",
+        "Avoid weekends and festival days if you prefer less crowd.",
+        "Limited accommodation is available nearby — book in advance during peak season."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Nainital",
+          "distance": "17 km",
+          "description": "Popular hill station with Naini Lake and Mall Road."
+        },
+        {
+          "name": "Bhowali",
+          "distance": "9 km",
+          "description": "Gateway town connecting Kumaon hill destinations."
+        },
+        {
+          "name": "Mukteshwar",
+          "distance": "45 km",
+          "description": "Scenic hill town known for temples and Himalayan views."
+        },
+        {
+          "name": "Almora",
+          "distance": "50 km",
+          "description": "Cultural hub of Kumaon with rich heritage and crafts."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "dhari-devi",
+    "name": "Dhari Devi Maa",
+    "tagline": "Guardian Goddess of Uttarakhand",
+    "shortDescription": "Dhari Devi Temple is a sacred Hindu shrine located on the banks of the Alaknanda River near Srinagar in Uttarakhand. The temple is dedicated to Goddess Dhari Devi, considered a protector deity of Uttarakhand.",
+    "images": [
+      "/images/chalo/dhari.webp"
+    ],
+    "badge": "Spiritual",
+    "guideContent": {
+      "overview": "Dhari Devi Temple is a sacred Hindu shrine located on the banks of the Alaknanda River near Srinagar in Uttarakhand. The temple is dedicated to Goddess Dhari Devi, considered a protector deity of Uttarakhand. Set amidst river valleys and mountain landscapes, it is an important stop for Char Dham pilgrims.",
+      "history": "The idol of Goddess Dhari Devi is believed to be self-manifested (Swayambhu) and is worshipped as the guardian deity of the region. According to local belief, the temple protects Uttarakhand from natural calamities.",
+      "spiritualImportance": "The idol of Goddess Dhari Devi is believed to be self-manifested (Swayambhu) and is worshipped as the guardian deity of the region. According to local belief, the temple protects Uttarakhand from natural calamities.Interestingly, it is said that the idol changes its appearance slightly during the day — appearing as a young girl in the morning, a woman in the afternoon, and an elderly form in the evening. The temple was relocated slightly during the construction of the Srinagar Hydroelectric Project while maintaining its sanctity.",
+      "bestTimeToVisit": [
+        "March–June offers pleasant weather and clear views.",
+        "September–November is ideal after the monsoon season.",
+        "July–August (Monsoon) can bring heavy rains and landslides — travel cautiously."
+      ],
+      "travelTips": [
+        "Combine your visit with Kedarnath or Badrinath Yatra.",
+        "Early morning darshan offers a peaceful spiritual experience.",
+        "Roads can be narrow — drive carefully or hire a local driver.",
+        "Carry water and essentials, as facilities nearby are limited.",
+        "Respect temple customs and maintain decorum inside the premises."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Srinagar(Garhwal)",
+          "distance": "15 km",
+          "description": "A scenic town on the Alaknanda River and a key transit hub."
+        },
+        {
+          "name": "Kedarnath",
+          "distance": "110-150 km",
+          "description": "One of the twelve Jyotirlingas and a major Char Dham shrine."
+        },
+        {
+          "name": "Devprayag",
+          "distance": "40 km",
+          "description": "Sacred confluence of the Alaknanda and Bhagirathi rivers."
+        },
+        {
+          "name": "Rudraprayag",
+          "distance": "35 km",
+          "description": "Holy town at the confluence of Alaknanda and Mandakini rivers."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "ayodhya",
+    "name": "Ayodhya",
+    "tagline": "Birthplace of Lord Ram",
+    "shortDescription": "Ayodhya, the sacred birthplace of Lord Ram, is one of the most revered pilgrimage cities in India. The newly consecrated Ram Mandir and the ghats along the Sarayu River draw millions of devotees every year.",
+    "images": [
+      "/images/chalo/ayodhya.webp"
+    ],
+    "badge": "Spiritual",
+    "guideContent": {
+      "overview": "Ayodhya is one of the Sapta Puri — the seven most sacred cities in Hinduism. The city is steeped in the mythology of the Ramayana and is undergoing a massive spiritual and tourism transformation following the consecration of the Ram Mandir in 2024.",
+      "history": "Ayodhya has been a place of pilgrimage for over 2,000 years and is mentioned extensively in the Ramayana and other Hindu scriptures. The recently completed Ram Mandir stands on the site believed to be the birthplace of Lord Ram.",
+      "spiritualImportance": "For Hindus, visiting Ayodhya and taking a dip in the Sarayu River washes away sins accumulated over lifetimes. The city is integral to the Vaishnava tradition and the Ramcharitmanas of Tulsidas.",
+      "bestTimeToVisit": "October–March for comfortable temperatures. Ram Navami (March/April) is the biggest festival — expect massive crowds. Diwali celebrations here are extraordinary, as Ayodhya is the original city of lights.",
+      "travelTips": [
+        "Ram Mandir has timed darshan slots — book online in advance to avoid long queues.",
+        "Wear simple, modest clothing; shoes must be removed at temple entrances.",
+        "Sarayu Aarti at Naya Ghat every evening is a must-see attraction.",
+        "Carry small denomination notes for donations and prasad.",
+        "E-rickshaws are the best way to move between temples and ghats."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Hanuman Garhi",
+          "distance": "1 km",
+          "description": "76-step temple dedicated to Hanuman, offering panoramic views of the city."
+        },
+        {
+          "name": "Kanak Bhawan",
+          "distance": "1.5 km",
+          "description": "A magnificent temple dedicated to Sita and Ram with intricate gold-plated idols."
+        },
+        {
+          "name": "Lucknow",
+          "distance": "135 km",
+          "description": "City of Nawabs — known for its biryani, monuments, and rich Mughal history."
+        },
+        {
+          "name": "Chitrakoot",
+          "distance": "220 km",
+          "description": "Holy site where Ram, Sita, and Lakshman spent significant time during exile."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "shree-khatu-shyam-ji",
+    "name": "Shree Khatu Shyam Ji",
+    "tagline": "Shrine of the Sheesh ke Daani",
+    "shortDescription": "Located in the Sikar district of Rajasthan, Khatu Shyam Ji is one of the most visited temples of North India. Devotees of Shyam Baba travel from across the country to seek his blessings at this powerful shrine.",
+    "images": [
+      "/images/chalo/khatu.webp"
+    ],
+    "badge": "Spiritual",
+    "guideContent": {
+      "overview": "Khatu Shyamji is a revered pilgrimage town situated about 80 km from Jaipur in Rajasthan. The main attraction is the Khatu Shyam temple, dedicated to Barbarika (grandson of Bhima), who is worshipped as Shyam Baba.",
+      "history": "According to legend, Barbarika was a mighty warrior who offered his head to Lord Krishna as a sacrifice before the Kurukshetra war. Krishna, pleased with his devotion, blessed him to be worshipped as \"Shyam\" in the Kali Yuga and promised that anyone who remembered him would have their wishes fulfilled.",
+      "spiritualImportance": "Shyam Baba is considered the \"Haare ka Sahara\" — the support of the defeated. Millions of devotees believe that sincere prayers here are always answered. The temple sees its biggest fest during Phalgun (February–March) Shukla Dwadashi.",
+      "bestTimeToVisit": "October–March for pleasant weather. Phalgun Mela (February/March) draws millions of pilgrims — plan for heavy crowds. Ekadashi days (every lunar fortnight) see very high footfall.",
+      "travelTips": [
+        "Book accommodation well in advance during Phalgun Mela and Ekadashi days.",
+        "Prasad includes the famous \"Shyam Dal\" — take some home as blessing.",
+        "The temple opens early (4:30 AM for Mangala Aarti) and closes post 10 PM. Visit during off-peak hours for a more peaceful darshan.",
+        "Jaipur (80 km) is the nearest airport and major rail hub.",
+        "Dress in yellow or blue clothing — these are considered auspicious colours for Shyam Baba."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Salasar Balaji",
+          "distance": "110 km",
+          "description": "Highly revered Hanuman temple in Salasar, Churu district."
+        },
+        {
+          "name": "Ringas",
+          "distance": "36 km",
+          "description": "Nearest railway station on the Jaipur–Sikar rail line."
+        },
+        {
+          "name": "Jaipur",
+          "distance": "80 km",
+          "description": "Pink City — Amber Fort, Hawa Mahal, and City Palace."
+        },
+        {
+          "name": "Sikar City",
+          "distance": "17 km",
+          "description": "Historic city with the famous Sharsh Das ki Haveli murals."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "nainital",
+    "name": "Nainital",
+    "tagline": "City of Lakes",
+    "shortDescription": "Perched in the Kumaon Himalayas at 2,084 metres, Nainital is built around a sparkling emerald lake. With colonial architecture, forested hillsides, and cool mountain air, it is Uttarakhand's most beloved hill station.",
+    "images": [
+      "/images/chalo/nainital.webp"
+    ],
+    "badge": "Hill Station",
+    "guideContent": {
+      "overview": "Nainital, the \"Lake District of India\", is set around the crescent-shaped Naini Lake at an elevation of 2,084 m. Popular for boating, cable-car rides, and scenic viewpoints, it offers a perfect escape into the Himalayas.",
+      "history": "Nainital was \"discovered\" by the British in 1841 and quickly became the summer capital of the United Provinces. Its colonial heritage is visible in the churches, stately buildings, and the famous Ropeway, which dates back to 1937.",
+      "spiritualImportance": "Naini Lake is associated with the goddess Naina Devi — one of the 51 Shakti Peethas. The Naina Devi Temple on the northern shore of the lake is a major pilgrimage site visited throughout the year.",
+      "bestTimeToVisit": "March–June for clear skies and pleasant weather. September–October post-monsoon offers lush greenery. December–February brings snowfall and the magical winter landscape.",
+      "travelTips": [
+        "Book hotels well in advance during May–June and Christmas–New Year peak season.",
+        "Mall Road near the lake is car-free — enjoy a leisurely stroll or take a horse ride.",
+        "Snow View Point (2,270 m) is accessible via ropeway for Himalayan panoramas.",
+        "Try local Uttarakhand cuisine: Bhatt ki Churkani and Singodi sweets.",
+        "Kathgodam (34 km) is the nearest railway station; Pantnagar (65 km) has the nearest airport."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Jim Corbett National Park",
+          "distance": "65 km",
+          "description": "India's oldest national park, famous for Bengal tigers and jeep safaris."
+        },
+        {
+          "name": "Bhimtal",
+          "distance": "22 km",
+          "description": "Larger lake than Naini with an island aquarium in the middle."
+        },
+        {
+          "name": "Mukteshwar",
+          "distance": "51 km",
+          "description": "Scenic hill town with a famous Shiva temple and apple orchards."
+        },
+        {
+          "name": "Ranikhet",
+          "distance": "60 km",
+          "description": "A cantonment hill station known for its golf course and Himalayan views."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "shimla",
+    "name": "Shimla",
+    "tagline": "Queen of Hill Stations",
+    "shortDescription": "The former summer capital of British India, Shimla is a charming hill town with Victorian architecture, the famous Mall Road, and panoramic Himalayan views. At 2,206 metres, it is one of India's most iconic destinations.",
+    "images": [
+      "/images/chalo/shimla.webp"
+    ],
+    "badge": "Hill Station",
+    "guideContent": {
+      "overview": "Shimla, the capital of Himachal Pradesh, sits at an elevation of 2,206 m in the Shivalik Range. With its colonial heritage, vibrant Mall Road, and scenic ridge walks, it attracts millions of tourists year-round.",
+      "history": "From 1864, Shimla served as the official summer capital of the British Raj — where the entire colonial government relocated for the hot season. The Shimla Agreement of 1972 was signed here between India and Pakistan.",
+      "bestTimeToVisit": "March–June for clear skies and pleasant temperatures (15–25°C). December–February for snowfall and winter sports. Avoid July–August for heavy monsoon rains and landslide risk.",
+      "travelTips": [
+        "Take the UNESCO-listed Kalka-Shimla heritage railway for a scenic 96 km toy-train journey.",
+        "The Mall Road is car-free — enjoy a stroll past colonial-era buildings and local shops.",
+        "Try local Himachali dishes: Dham (traditional feast), Sidu (fermented bread), and Chha Gosht.",
+        "Kufri (16 km) offers yak rides and a Himalayan Wildlife Zoo with snow leopards.",
+        "Book accommodation on the upper/lower bazaar side to avoid Mall Road tourist pricing."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Kufri",
+          "distance": "16 km",
+          "description": "Popular ski resort in winter with a Himalayan Wildlife Zoo."
+        },
+        {
+          "name": "Chail",
+          "distance": "44 km",
+          "description": "Home to the world's highest cricket pitch and a royal Palace Hotel."
+        },
+        {
+          "name": "Naldehra",
+          "distance": "23 km",
+          "description": "One of the oldest golf courses, designed by Lord Curzon in 1905."
+        },
+        {
+          "name": "Manali",
+          "distance": "270 km",
+          "description": "Adventure capital of Himachal with rohtang pass and river rafting."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "manali",
+    "name": "Manali",
+    "tagline": "Adventure Capital of India",
+    "shortDescription": "Nestled at the head of the Kullu Valley at 2,050 metres, Manali is the gateway to Lahaul-Spiti and Leh. Famous for snow-capped peaks, river rafting, paragliding, and ancient temples, it is a paradise for adventurers.",
+    "images": [
+      "/images/chalo/manali.webp"
+    ],
+    "badge": "Adventure",
+    "guideContent": {
+      "overview": "Manali sits at the northern end of the Kullu Valley in Himachal Pradesh at 2,050 m. It is a major hub for adventure tourism — offering trekking to Hampta Pass and Chandrakhani, skiing at Solang Nullah, and the thrilling Rohtang Pass.",
+      "history": "Manali is named after the sage Manu, who, according to Hindu mythology, built a home here after a great flood. Old Manali contains the ancient Manu Rishi Temple. The Kullu Valley has been a trading route between India and central Asia for centuries.",
+      "spiritualImportance": "The Hadimba Devi Temple (1553 AD) — dedicated to the goddess Hadimba — is one of the most significant temples in Himachal Pradesh. The Bijli Mahadev Temple (8 km) is famous for its 20-metre lightning rod-like spire.",
+      "bestTimeToVisit": "October–February for snow activities (Rohtang may close). March–June for trekking, rafting, and pleasant weather. July–August is monsoon season — Rohtang Pass remains open but landslides are common. Avoid Manali during Diwali to New Year without advance booking.",
+      "travelTips": [
+        "Rohtang Pass (3,978 m) requires a permit; book at least 2 days in advance online.",
+        "Acclimatise for a day in Manali before heading to higher altitudes like Lahaul.",
+        "River rafting on the Beas River (13 km of rapids) is available May–June.",
+        "Solang Valley is the centre for paragliding, skiing, and zorbing activities.",
+        "Old Manali village near the Manu Temple has better budget cafes and a laid-back vibe."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Rohtang Pass",
+          "distance": "51 km",
+          "description": "Iconic Himalayan pass at 3,978 m — snow available almost year-round."
+        },
+        {
+          "name": "Solang Valley",
+          "distance": "14 km",
+          "description": "Centre for snow sports, paragliding, and cable-car rides."
+        },
+        {
+          "name": "Kullu",
+          "distance": "40 km",
+          "description": "Famous for the Dussehra festival and Parvati Valley trekking."
+        },
+        {
+          "name": "Spiti Valley",
+          "distance": "190 km",
+          "description": "Remote high-altitude desert valley with ancient Buddhist monasteries."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "udaipur",
+    "name": "Udaipur",
+    "tagline": "City of Lakes & Palaces",
+    "shortDescription": "Udaipur — the Venice of the East — is Rajasthan's most romantic city, built around a series of shimmering lakes. Majestic palaces rising from the water, narrow old-city lanes, and traditional haveli architecture make it magical.",
+    "images": [
+      "/images/chalo/Udaipur.webp"
+    ],
+    "badge": "Heritage",
+    "guideContent": {
+      "overview": "Udaipur, the capital of the Mewar kingdom, is built around Lake Pichola and is renowned for its royal heritage, arts, and culture. The City Palace — one of India's largest palace complexes — and the Lake Palace Hotel on a small island are the city's crown jewels.",
+      "history": "Founded in 1559 by Maharana Udai Singh II of the Sisodia Rajput clan, Udaipur was the capital of Mewar, a kingdom famous for centuries of resistance to Mughal rule. The Mewar royal family traces its lineage directly to the Sun God — making it one of the oldest ruling dynasties in the world.",
+      "bestTimeToVisit": "October–March for cooler weather and outdoor exploration. Avoid April–June (extreme heat up to 45°C). The Mewar Festival in March celebrates spring with folk performances and boat processions.",
+      "travelTips": [
+        "Take a sunset boat ride on Lake Pichola for views of the City Palace and Jag Mandir.",
+        "Visit the Vintage and Classic Car Collection in the City Palace Museum.",
+        "Explore Bagore Ki Haveli for the evening cultural show — an authentic Rajasthani folk performance.",
+        "Stay in a heritage hotel if budget allows — many converted havelis offer authentic royal experiences.",
+        "Hire a local guide to explore the old city and its many hidden temples."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Kumbhalgarh Fort",
+          "distance": "80 km",
+          "description": "UNESCO-listed fort with the second-longest wall in the world after the Great Wall of China."
+        },
+        {
+          "name": "Ranakpur Jain Temple",
+          "distance": "90 km",
+          "description": "One of the five sacred Jain pilgrimages — with 1,444 uniquely carved marble pillars."
+        },
+        {
+          "name": "Mount Abu",
+          "distance": "163 km",
+          "description": "Rajasthan's only hill station with the Dilwara Jain Temples."
+        },
+        {
+          "name": "Eklingji Temple",
+          "distance": "22 km",
+          "description": "Historic Shiva temple complex, the personal deity of the Mewar royal family."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "jaisalmer",
+    "name": "Jaisalmer",
+    "tagline": "The Golden City of Rajasthan",
+    "shortDescription": "Rising from the heart of the Thar Desert, Jaisalmer is a city of gold — its sandstone fort, havelis, and desert dunes glowing amber at sunset. Camel safaris, folk music, and star-gazing make it utterly unforgettable.",
+    "images": [
+      "/images/chalo/jaisalmer.webp"
+    ],
+    "badge": "Desert & Heritage",
+    "guideContent": {
+      "overview": "Jaisalmer sits in the heart of the Thar Desert in western Rajasthan. The UNESCO-listed Jaisalmer Fort — one of the few \"living forts\" in the world, with 3,000 residents inside its walls — is the centrepiece of this golden desert city.",
+      "history": "Founded in 1156 AD by Rajput ruler Rawal Jaisal, Jaisalmer was once a vital stop on the trade route between India and Central Asia. Camel caravans laden with silk, spices, and gold passed through here, enriching the city's merchants who built elaborate havelis to display their wealth.",
+      "bestTimeToVisit": "October–February for comfortable desert temperatures (10–25°C). Avoid May–June when temperatures soar to 45°C+. The Desert Festival (February) features camel races, folk music, and the Mr. Desert pageant.",
+      "travelTips": [
+        "Book a camel safari to Sam Sand Dunes (40 km) for an overnight camping experience.",
+        "Watch the sunset from Vyas Chhatri viewpoint overlooking the golden fort and desert.",
+        "Visit Patwon Ki Haveli — five connected mansions with extraordinarily detailed stone carvings.",
+        "Carry plenty of sunscreen, a hat, and a shawl (desert nights can be cold even in winter).",
+        "Try local Rajasthani food: Dal Baati Churma, Laal Maas, and Ker Sangri."
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Sam Sand Dunes",
+          "distance": "40 km",
+          "description": "The largest and most accessible desert dunes near Jaisalmer — perfect for sunset camel rides."
+        },
+        {
+          "name": "Kuldhara",
+          "distance": "18 km",
+          "description": "A haunted abandoned village, mysteriously deserted overnight 200 years ago."
+        },
+        {
+          "name": "Gadisar Lake",
+          "distance": "2 km",
+          "description": "A beautiful reservoir with temples, cenotaphs and boat rides — best at dawn."
+        },
+        {
+          "name": "Jodhpur",
+          "distance": "285 km",
+          "description": "The Blue City with Mehrangarh Fort, one of India's largest and most imposing forts."
+        }
+      ]
+    }
+  }
+]

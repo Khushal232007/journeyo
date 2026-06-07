@@ -1,6 +1,6 @@
 {
   "name": "Route Story",
-  "description": "The world's most premium, cinematic, modern, and emotionally immersive luxury travel platform.",
+  "description": "Simple and authentic travel planning, slow mountain routes, and local experiences with real planners.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

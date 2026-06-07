@@ -1,0 +1,1 @@
+module.exports = [{title:"tour1Title",desc:"tour1Desc",img:"tour1Img",badge:"tour1Badge"},{title:"tour2Title",desc:"tour2Desc",img:"tour2Img",badge:"tour2Badge"},{title:"tour3Title",desc:"tour3Desc",img:"tour3Img",badge:"tour3Badge"},{title:"tour4Title",desc:"tour4Desc",img:"tour4Img",badge:"tour4Badge"}];

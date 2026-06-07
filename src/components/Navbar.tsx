@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X, Compass, Sun, Moon } from 'lucide-react';
-// @ts-ignore
-import logoImg from '../assets/images/journeyo_brand_logo_1780414877692.png';
 
 interface NavbarProps {
   currentTab: string;
@@ -35,15 +33,24 @@ export default function Navbar({ currentTab, setCurrentTab, theme, setTheme }: N
         {/* Brand Logo */}
         <button 
           onClick={() => { setCurrentTab('home'); setIsOpen(false); }}
-          className="flex items-center cursor-pointer text-left"
+          className="flex items-center gap-2.5 cursor-pointer text-left group"
         >
-          <div className="h-8.5 sm:h-9 py-0.5 px-2.5 rounded-xl bg-white flex items-center justify-center overflow-hidden shadow-md border border-white/20">
-            <img 
-              src={logoImg} 
-              alt="Route Story Logo" 
-              className="h-full object-contain pointer-events-none select-none max-w-[110px] sm:max-w-[130px]"
-              referrerPolicy="no-referrer"
-            />
+          <div className={`w-8.5 h-8.5 rounded-xl flex items-center justify-center shadow-md border transition-all duration-300 group-hover:scale-105 ${
+            theme === 'day' 
+              ? 'bg-[#8B5E3C] border-[#8B5E3C]/20 text-white' 
+              : 'bg-[#B98A5E]/20 border-[#B98A5E]/30 text-[#B98A5E]'
+          }`}>
+            <Compass className="w-5 h-5 animate-pulse" />
+          </div>
+          <div className="flex flex-col">
+            <span className={`font-serif tracking-[0.16em] text-[14px] sm:text-[16px] font-bold leading-none ${
+              theme === 'day' ? 'text-[#4A2E1F]' : 'text-[#F5E9DB]'
+            }`}>
+              ROUTE STORY
+            </span>
+            <span className="text-[8px] tracking-[0.18em] font-mono opacity-60 leading-none mt-1 uppercase">
+              Curators of Meaning
+            </span>
           </div>
         </button>
 

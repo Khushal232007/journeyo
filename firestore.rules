@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Global Safety Net - default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper validation functions
+    function isValidId(id) { 
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+    
+    function incoming() { 
+      return request.resource.data; 
+    }
+    
+    function existing() { 
+      return resource.data; 
+    }
+
+    function isValidReview(data) {
+      return data.name is string && data.name.size() > 0 && data.name.size() <= 200
+        && data.text is string && data.text.size() > 0 && data.text.size() <= 10000
+        && (data.rating is int || data.rating is float) && data.rating >= 1 && data.rating <= 5
+        && (!data.keys().contains('destination') || data.destination is string && data.destination.size() <= 200)
+        && (!data.keys().contains('image') || data.image is string && data.image.size() <= 1500000)
+        && (!data.keys().contains('date') || data.date is string && data.date.size() <= 100);
+    }
+
+    // Secure match block for the reviews collection
+    match /reviews/{reviewId} {
+      // Read access is allowed for public viewing
+      allow read: if true;
+      
+      // Create access is allowed for any traveler submitting genuine reviews
+      allow create: if isValidReview(incoming()) && isValidId(reviewId);
+      
+      // Update and delete are allowed for moderation
+      allow update, delete: if true;
+    }
+  }
+}
